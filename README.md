@@ -13,7 +13,7 @@ Feel free to collaborate with this repository, use the fork and pull methodology
 
 Olá!
 
-Seja bem vin do a esse projeto! Isso é uma tentativa de compilar algumas informações para a comunidade sobre o que estudar em segurança da informação.
+Seja bem vindo a esse projeto! Isso é uma tentativa de compilar algumas informações para a comunidade sobre o que estudar em segurança da informação.
 Sinta-se livre para colaborar com esse repositório, use um fork para editar e um pull request para colaborar.
 
 
