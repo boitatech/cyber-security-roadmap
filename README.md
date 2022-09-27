@@ -1,15 +1,8 @@
-# Cyber Security Road Map
+<h1 align="center"> Cyber Security Road Map </h1>
 
-
-## English
-
-Hello,
-
-Welcome to this project! It’s a try to compile some information to the community about what we should study in cyber security.
-Feel free to collaborate with this repository, use the fork and pull methodology for that.
-
-
-## Português
+<div align='center'>
+    <img src='https://i.imgur.com/L9nmyHE.png' width="300" height="300">
+</div>
 
 Olá!
 
