@@ -88,3 +88,74 @@ Aprender sobre as principais ameaças cibernéticas e como elas evoluem, incluin
 5. Estudar sobre a gestão de continuidade de negócios (BCM) e a recuperação de desastres, incluindo a criação de planos de contingência e a implementação de soluções de backup e recuperação.
 6. Certificações específicas para a área, como CISM, CISSP, SANS, SSCP, CISA, GSEC, GCIH, GCED e GCFA, são uma boa forma de mostrar competência e habilidade na segurança defensiva e ajudar a construir uma carreira nesta área.
 7. Participar de comunidades e fóruns de segurança cibernética para manter-se atualizado e compartilhar conhecimentos com outros profissionais na área.
+
+## Pergunta
+De um roadmap de estudos para entender o básico de computadores e programação?
+## Resposta
+1. Inicie estudando os fundamentos da computação, como a arquitetura de computadores, sistemas operacionais e lógica de programação.
+2. Aprenda uma linguagem de programação de alto nível, como Python, Java ou C#. Escolha uma que você se sinta confortável e comece a escrever pequenos programas para 3. entender como ela funciona.
+4. Continue aprofundando seus conhecimentos em programação, aprendendo conceitos como estruturas de dados, algoritmos e programação orientada a objetos.
+5. Estude as diferentes áreas da computação, como inteligência artificial, ciência de dados, redes de computadores, segurança cibernética, etc. e escolha uma área de interesse para se especializar.
+6. Pratique muito, construindo projetos e participando de desafios online e competições para aperfeiçoar suas habilidades.
+7. Continuar atualizando-se sobre as novas tendências e tecnologias emergentes.
+8. Participar de comunidades de programadores, perguntar e responder perguntas, e colaborar em projetos open-source.
+
+## Pergunta
+O que devo estudar em arquitetura de computadores?
+## Resposta
+A arquitetura de computadores é o estudo dos componentes básicos que compõem um computador e como eles interagem entre si. Aqui estão alguns tópicos importantes que você deve estudar em arquitetura de computadores:
+1. Organização básica de um computador: estudar como os componentes, como o processador, a memória e o armazenamento, funcionam juntos para executar instruções.
+2. Memória: estudar os diferentes tipos de memória, como memória RAM e memória cache, e como eles são usados ​​pelo computador.
+3. Barramentos: estudar como os diferentes componentes se comunicam usando barramentos, como o barramento de dados e o barramento de endereços.
+4. Processadores: estudar como os processadores funcionam, incluindo a arquitetura de Von Neumann e a arquitetura RISC e CISC.
+5. Unidade de controle: estudar como a unidade de controle gerencia e controla as operações do computador.
+6. Dispositivos de entrada e saída: estudar os diferentes dispositivos, como teclado, mouse, monitor e impressora, usados ​​para entrar e sair dados do computador.
+7. Sistemas operacionais: estudar como os sistemas operacionais gerenciam os recursos do computador, como memória, processamento e dispositivos de entrada e saída.
+8. Arquitetura de computadores embarcadas e dispositivos móveis.
+7. Arquitetura de computadores paralelos e distribuídos.
+9. Novas tendências e tecnologias emergentes, como computação quântica e neuromorfa.
+
+## Perguntas
+O que devo estudar em sistemas operacionais?
+## Resposta
+Os sistemas operacionais são o software intermediário entre os aplicativos e o hardware do computador. Aqui estão alguns tópicos importantes que você deve estudar em sistemas operacionais:
+1. Conceitos básicos: estudar os conceitos fundamentais de sistemas operacionais, como processos, threads, gerenciamento de recursos e gerenciamento de memória.
+2. Gerenciamento de processos: estudar como os sistemas operacionais gerenciam e escalonam os processos, incluindo algoritmos de escalonamento de processos e3 gerenciamento de contexto.
+3. Gerenciamento de memória: estudar como os sistemas operacionais gerenciam a memória, incluindo algoritmos de alocação de memória e gerenciamento de páginas.
+4. Gerenciamento de arquivos: estudar como os sistemas operacionais gerenciam arquivos e sistemas de arquivos, incluindo estruturas de diretórios e gerenciamento de permissões.
+5. Segurança: estudar como os sistemas operacionais implementam segurança, incluindo autenticação, criptografia e gerenciamento de permissões de acesso.
+6. Rede: estudar como os sistemas operacionais gerenciam e se comunicam com redes, incluindo protocolos de comunicação de rede e gerenciamento de conexões.
+7. Sistemas distribuídos: estudar como os sistemas operacionais lidam com sistemas distribuídos, incluindo comunicação entre processos, sincronização e tolerância a falhas.
+8. Tipos de Sistemas operacionais: estudar sobre sistemas operacionais diferentes como Windows, Linux, Unix, MacOS, sistemas operacionais embarcados, sistemas operacionais de tempo real e sistemas operacionais móveis.
+9. Novas tendências e tecnologias emergentes, como sistemas operacionais baseados em nuvem e sistemas operacionais para dispositivos IoT.
+10. Prática administrando sistemas operacionais, configurando e gerenciando sistemas operacionais em diferentes ambientes e usando ferramentas de administração de sistemas operacionais.
+
+## Pergunta
+O que devo estudar em redes de computadores?
+## Resposta
+Redes de computadores são sistemas que permitem que computadores se comuniquem e compartilhem informações. Aqui estão alguns tópicos importantes que você deve estudar em redes de computadores:
+1. Fundamentos de redes: estudar os conceitos fundamentais de redes, como topologias, protocolos e camadas OSI.
+2. Protocolos de comunicação: estudar os protocolos de comunicação utilizados em redes, incluindo TCP/IP, UDP e DNS.
+3. Segurança de redes: estudar como proteger redes, incluindo criptografia, autenticação e firewalls.
+4. Roteamento e encaminhamento: estudar como os pacotes são encaminhados através de uma rede, incluindo protocolos de roteamento e algoritmos de encaminhamento.
+5. Wireless e redes móveis: estudar como as redes sem fio e móveis funcionam, incluindo protocolos de comunicação sem fio e tecnologias como Wi-Fi e cellular.
+6. Redes de área ampla (WAN): estudar como as redes de área ampla funcionam, incluindo protocolos de comunicação e tecnologias como MPLS e VPNs.
+7. Redes de área local (LAN): estudar como as redes de área local funcionam, incluindo protocolos de comunicação e tecnologias como Ethernet.
+8. Redes de centro de dados: estudar como as redes de centro de dados funcionam, incluindo protocolos de comunicação e tecnologias como VLANs e switches de alto desempenho.
+9. Novas tendências e tecnologias emergentes, como redes definidas por software (SDN), redes 5G e IoT.
+10. Prática configurando e gerenciando redes, usando ferramentas de gerenciamento de rede e diagnosticando e solucionando problemas de rede.
+
+## Pergunta
+O que devo aprender em lógica de programação?
+## Resposta
+A lógica de programação é a base para escrever programas de computador eficientes e corretos. Aqui estão alguns tópicos importantes que você deve estudar em lógica de programação:
+1. Algoritmos: estudar como escrever algoritmos para resolver problemas e executar tarefas específicas.
+2. Estruturas de controle de fluxo: estudar as estruturas de controle de fluxo, como condicionais (if, else), laços (for, while) e saltos (break, continue, return).
+3. Variáveis e tipos de dados: estudar como declarar e usar variáveis, incluindo diferentes tipos de dados (int, float, string, etc.) e suas operações.
+4. Funções: estudar como definir e chamar funções, incluindo passagem de parâmetros e retorno de valores.
+5. Estruturas de dados: estudar as estruturas de dados básicas, como listas, vetores, matrizes e dicionários, e como usá-las para armazenar e manipular dados.
+6. Depuração e testes: estudar como depurar e testar código, incluindo ferramentas e técnicas para identificar e corrigir erros.
+7. Programação orientada a objetos: estudar como a programação orientada a objetos funciona, incluindo conceitos como classes, objetos, herança e polimorfismo.
+8. Boas práticas de programação: estudar como escrever código limpo, legível e manutenível, incluindo convenções de codificação e design de código.
+9. Resolvendo problemas: estudar como analisar e resolver problemas complexos e como seguir o processo de pensamento lógico.
+10. Praticar aplicando tudo o que foi estudado em projetos práticos, desafios e exercícios.
