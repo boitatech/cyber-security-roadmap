@@ -70,12 +70,12 @@ Se você deseja iniciar na área de segurança de aplicativos, além da roadmap 
 Se você deseja seguir uma carreira na segurança ofensiva, além da roadmap de conhecimento mencionada anteriormente, algumas coisas adicionais que você pode estudar incluem:
 ## Resposta
 Aprender sobre os principais métodos de ataque cibernético, como phishing, engenharia social, exploração de vulnerabilidades e ataques de negação de serviço (DoS).
-2. Estudar sobre as principais ferramentas utilizadas para realizar ataques cibernéticos, como Metasploit, Nmap, Burp Suite, Cain e Abel, entre outras.
-3. Aprender sobre as principais técnicas de análise de vulnerabilidades, como análise estática e dinâmica de código, análise de tráfego de rede e análise de logs.
-4. Estudar sobre as principais tendências e desafios em segurança cibernética, como a cibersegurança na nuvem, IoT, inteligência artificial e aprendizado de máquina.
-5. Participar de comunidades e fóruns de segurança cibernética para manter-se atualizado e compartilhar conhecimentos com outros profissionais na área.
-6. Certificações específicas para a área, como OSCP, OSCE, OSWE, GPEN, CEH, e LPT, são uma boa forma de mostrar competência e habilidade na segurança ofensiva e ajudar a construir uma carreira nesta área.
-7. É importante lembrar que a segurança ofensiva pode ser perigosa e pode causar danos se não for realizada de forma ética e responsável, então é importante ser consciente das leis e regulamentos que se aplicam e evitar violações.
+1. Estudar sobre as principais ferramentas utilizadas para realizar ataques cibernéticos, como Metasploit, Nmap, Burp Suite, Cain e Abel, entre outras.
+2. Aprender sobre as principais técnicas de análise de vulnerabilidades, como análise estática e dinâmica de código, análise de tráfego de rede e análise de logs.
+3. Estudar sobre as principais tendências e desafios em segurança cibernética, como a cibersegurança na nuvem, IoT, inteligência artificial e aprendizado de máquina.
+4. Participar de comunidades e fóruns de segurança cibernética para manter-se atualizado e compartilhar conhecimentos com outros profissionais na área.
+5. Certificações específicas para a área, como OSCP, OSCE, OSWE, GPEN, CEH, e LPT, são uma boa forma de mostrar competência e habilidade na segurança ofensiva e ajudar a construir uma carreira nesta área.
+6. É importante lembrar que a segurança ofensiva pode ser perigosa e pode causar danos se não for realizada de forma ética e responsável, então é importante ser consciente das leis e regulamentos que se aplicam e evitar violações.
 
 ## Pergunta
 E se eu quiser segurança defensiva?
