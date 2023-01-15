@@ -13,5 +13,4 @@ Existem inúmeras formas de estudar segurança da informação, desde cursos onl
 independentemente do formato escolhido, o importante é começar a pesquisar e buscar o conteúdo que mais te interessa. Aproveite essa jornada e boa sorte!
 
 ## Indíce
-- [Contents in english](readme_en.md)
-- [Conteúdo em português](readme_pt-br.md)
+- [Resposta Frequêntes](FAQ.md)
