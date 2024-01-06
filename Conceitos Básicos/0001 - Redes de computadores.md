@@ -63,7 +63,7 @@ A comunicação ocorre basicamente pela manipulação de duas variáveis, a corr
 
 ### Largura de banda e taxa de transmissão
 
-A largura de banda pode ser fisicamente compreendida como o intervalo de frequência no qual um sinal é transmitido, representado pela diferença entre a maior e a menor frequência ocupada pelo sinal, expressa pela equação $$ BW = f_{max} - f_{min} $$.
+A largura de banda pode ser fisicamente compreendida como o intervalo de frequência no qual um sinal é transmitido, representado pela diferença entre a maior e a menor frequência ocupada pelo sinal, expressa pela equação $ BW = f_{max} - f_{min} $.
 
 > Em transmissões de sinal, o corte preciso na frequência nem sempre é alcançado, resultando em um vazamento de sinal com atenuação significativa. Geralmente, esses vazamentos não são considerados na transmissão, a menos que estejamos lidando com interferências.
 
@@ -72,11 +72,11 @@ A largura de banda tem uma influência direta na capacidade de transmissão de b
 $$ T_{bit/s} = 2 \times BW log_2 V $$
 
 Onde:
-- $$ T_{bit/s} $$ é taxa de transmissão em bits por segundo;
-- $$ BW $$ é a largura de banda;
-- $$ V $$ é a quantidade de níveis discretos.
+- $ T_{bit/s} $ é taxa de transmissão em bits por segundo;
+- $ BW $ é a largura de banda;
+- $ V $ é a quantidade de níveis discretos.
 
-Caso o canal possua interferência é necessário contabilizar a relação de sinal e ruído $$ S/N $$ que resulta na seguinte equação modificada.
+Caso o canal possua interferência é necessário contabilizar a relação de sinal e ruído $ S/N $ que resulta na seguinte equação modificada.
 
 $$ T_{bit/s} = 2 \times BW log_2 \left ( 1+\frac{S}{N} \right ) $$
 
@@ -128,7 +128,7 @@ No entanto, esse método de divisão mostra-se ineficiente em situações em que
 
 A solução para isso é adotar a alocação dinâmica de canais. No entanto, para que isso funcione adequadamente, algumas premissas devem ser atendidas:
 
-- **Trafego independente:** Este modelo consiste em N estações independentes, como computadores ou telefones, cada uma operada por um programa ou usuário que gera quadros para transmissão. A quantidade esperada de quadros gerados em um intervalo de duração $$ \Delta t $$ é $$ \lambda \Delta t $$, onde $$ \lambda $$ é uma constante representando a taxa de chegada de novos quadros. Após a geração de um quadro, a estação entra em um estado bloqueado, aguardando até que o quadro seja transmitido com sucesso.
+- **Trafego independente:** Este modelo consiste em N estações independentes, como computadores ou telefones, cada uma operada por um programa ou usuário que gera quadros para transmissão. A quantidade esperada de quadros gerados em um intervalo de duração $ \Delta t $ é $ \lambda \Delta t $, onde $ \lambda $ é uma constante representando a taxa de chegada de novos quadros. Após a geração de um quadro, a estação entra em um estado bloqueado, aguardando até que o quadro seja transmitido com sucesso.
 - **Canal único:** Há um único canal disponível para todas as comunicações, permitindo que todas as estações transmitam e recebam por ele. Embora todas as estações sejam consideradas igualmente capazes, os protocolos podem atribuir diferentes papéis (como prioridades) a elas.
 - **Colisões observáveis:** Se dois quadros forem transmitidos simultaneamente, eles se sobreporão no tempo, resultando em uma colisão que adultera o sinal. Todas as estações são capazes de detectar colisões. Um quadro que tenha sofrido colisão precisará ser retransmitido posteriormente. Não existem outros erros além daqueles gerados por colisões.
 - **Tempo contínuo ou segmentado:** O tempo pode ser considerado contínuo, permitindo que a transmissão do quadro comece a qualquer momento. Alternativamente, o tempo pode ser dividido em intervalos discretos (slots). As transmissões de quadros sempre iniciam no início de um slot. Um slot pode conter 0, 1 ou mais quadros, indicando um slot ocioso, uma transmissão bem-sucedida ou uma colisão, respectivamente.
@@ -159,6 +159,8 @@ O endereço MAC é constituído por 12 caracteres alfanuméricos, que podem ser 
 > Os padrões de comunicação em redes locais e metropolitanas são estabelecidas pelas normas da série IEEE 802.x.
 
 > Os protocolos de redes sem fio adicionam diversas complexidades e são definidos pelo normativo IEEE 802.11 e IEEE 802.1x.
+
+> É possível o controle do tamanho do pacote através da alteração do [MTU](https://pt.wikipedia.org/wiki/Unidade_m%C3%A1xima_de_transmiss%C3%A3o).
 
 ## Camada de Redes
 
