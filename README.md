@@ -1,3 +1,5 @@
+![Logo da Boitatech](https://github.com/boitatech/mediakit/blob/master/images/logos/logo_sec.png)
+
 # Guia de Estudos
 
 ## Objetivo
