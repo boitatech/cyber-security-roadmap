@@ -63,7 +63,7 @@ A comunicação ocorre basicamente pela manipulação de duas variáveis, a corr
 
 ### Largura de banda e taxa de transmissão
 
-A largura de banda pode ser fisicamente compreendida como o intervalo de frequência no qual um sinal é transmitido, representado pela diferença entre a maior e a menor frequência ocupada pelo sinal, expressa pela equação $ BW = f_{max} - f_{min} $.
+A largura de banda pode ser fisicamente compreendida como o intervalo de frequência no qual um sinal é transmitido, representado pela diferença entre a maior e a menor frequência ocupada pelo sinal, expressa pela equação $` BW = f_{max} - f_{min} `$.
 
 > Em transmissões de sinal, o corte preciso na frequência nem sempre é alcançado, resultando em um vazamento de sinal com atenuação significativa. Geralmente, esses vazamentos não são considerados na transmissão, a menos que estejamos lidando com interferências.
 
