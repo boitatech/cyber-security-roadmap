@@ -427,6 +427,14 @@ A transição do IPv4 para o IPv6 envolve atualizações e configurações em in
 
 A ampla implantação do IPv6 é essencial para atender às crescentes demandas por endereçamento de dispositivos e para garantir a escalabilidade e o crescimento contínuo da Internet, além de mitigar os desafios de escassez de endereços IPv4.
 
+### Endereço de loopback
+
+O endereço de [loopback](https://pt.wikipedia.org/wiki/Loopback) em uma rede de computadores é um endereço especial usado para permitir que um dispositivo se comunique consigo mesmo. Na maioria dos sistemas, o endereço de loopback é representado pelo endereço IPv4 127.0.0.1 (IPv6 ::1/128 ou 0:0:0:0:0:0:0:1/128).
+
+Quando um dispositivo envia dados para o endereço de loopback, esses dados são roteados de volta para a própria máquina, permitindo testar se a pilha de protocolos de rede (como TCP/IP) está funcionando corretamente. Isso é frequentemente usado para testar se o hardware de rede e as configurações de software estão funcionando corretamente sem a necessidade de se comunicar com outros dispositivos em uma rede.
+
+O endereço de loopback é essencial em muitos cenários de desenvolvimento de software, testes de rede e solução de problemas, já que permite que os programas se comuniquem consigo mesmos, simulando interações de rede sem precisar de uma conexão externa.
+
 ## Aplicação
 
 A camada de aplicação serve como a interface entre as aplicações e a rede subjacente, desacoplando os detalhes específicos da infraestrutura de rede física. Ela provê uma gama de serviços e protocolos que viabilizam a comunicação entre diferentes aplicações e usuários finais. Estes protocolos definem as regras e formatos para o intercâmbio de dados, governando como os aplicativos se comunicam, formatam, transmitem e recebem informações. Alguns exemplos de protocolos nesta camada incluem o HTTP (Hypertext Transfer Protocol) para acesso a páginas web, o SMTP (Simple Mail Transfer Protocol) para envio de e-mails, o FTP (File Transfer Protocol) para transferência de arquivos e outros protocolos dedicados a funcionalidades específicas, cada um com suas próprias regras e operações definidas para aplicações distintas.
