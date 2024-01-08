@@ -265,52 +265,52 @@ O [IPv4](https://pt.wikipedia.org/wiki/Protocolo_de_Internet) é um protocolo de
 
 Um exemplo de cabeçalho TCP/IPv4 está na tabela a seguir:
 
-<table class="tg">
+<table>
 <thead>
   <tr>
-    <th class="tg-9wq8">+</th>
-    <th class="tg-9wq8">0-3</th>
-    <th class="tg-9wq8">4-7</th>
-    <th class="tg-9wq8">8-15</th>
-    <th class="tg-9wq8">16-18</th>
-    <th class="tg-9wq8">19-31</th>
+    <th>+</th>
+    <th>0-3</th>
+    <th>4-7</th>
+    <th>8-15</th>
+    <th>16-18</th>
+    <th>19-31</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td class="tg-9wq8">0</td>
-    <td class="tg-9wq8">Versão</td>
-    <td class="tg-9wq8">Tamanho do cabeçalho</td>
-    <td class="tg-9wq8">Tipo de Serviço</td>
-    <td class="tg-9wq8" colspan="2">Comprimento</td>
+    <td>0</td>
+    <td>Versão</td>
+    <td>Tamanho do cabeçalho</td>
+    <td>Tipo de Serviço</td>
+    <td colspan="2">Comprimento</td>
   </tr>
   <tr>
-    <td class="tg-9wq8">32</td>
-    <td class="tg-9wq8" colspan="3">Identificador</td>
-    <td class="tg-9wq8">Flags</td>
-    <td class="tg-9wq8">Offset</td>
+    <td>32</td>
+    <td colspan="3">Identificador</td>
+    <td>Flags</td>
+    <td>Offset</td>
   </tr>
   <tr>
-    <td class="tg-9wq8">64</td>
-    <td class="tg-9wq8" colspan="2">Tempo de Vida (TTL)</td>
-    <td class="tg-9wq8">Protocolo</td>
-    <td class="tg-9wq8" colspan="2">Checksum</td>
+    <td>64</td>
+    <td colspan="2">Tempo de Vida (TTL)</td>
+    <td>Protocolo</td>
+    <td colspan="2">Checksum</td>
   </tr>
   <tr>
-    <td class="tg-9wq8">96</td>
-    <td class="tg-9wq8" colspan="5">Endereço de origem</td>
+    <td>96</td>
+    <td colspan="5">Endereço de origem</td>
   </tr>
   <tr>
-    <td class="tg-9wq8">128</td>
-    <td class="tg-9wq8" colspan="5">Endereço de destino</td>
+    <td>128</td>
+    <td colspan="5">Endereço de destino</td>
   </tr>
   <tr>
-    <td class="tg-9wq8">160</td>
-    <td class="tg-9wq8" colspan="5">Opções</td>
+    <td>160</td>
+    <td colspan="5">Opções</td>
   </tr>
   <tr>
-    <td class="tg-9wq8">192</td>
-    <td class="tg-9wq8" colspan="5">Dados</td>
+    <td>192</td>
+    <td colspan="5">Dados</td>
   </tr>
 </tbody>
 </table>
