@@ -425,15 +425,138 @@ A ampla implantação do IPv6 é essencial para atender às crescentes demandas 
 
 ## Aplicação
 
+A camada de aplicação serve como a interface entre as aplicações e a rede subjacente, desacoplando os detalhes específicos da infraestrutura de rede física. Ela provê uma gama de serviços e protocolos que viabilizam a comunicação entre diferentes aplicações e usuários finais. Estes protocolos definem as regras e formatos para o intercâmbio de dados, governando como os aplicativos se comunicam, formatam, transmitem e recebem informações. Alguns exemplos de protocolos nesta camada incluem o HTTP (Hypertext Transfer Protocol) para acesso a páginas web, o SMTP (Simple Mail Transfer Protocol) para envio de e-mails, o FTP (File Transfer Protocol) para transferência de arquivos e outros protocolos dedicados a funcionalidades específicas, cada um com suas próprias regras e operações definidas para aplicações distintas.
+
 ### DNS
+
+O Domain Name System (DNS) é um sistema distribuído hierarquicamente que resolve nomes de domínio legíveis por humanos em endereços IP usados pelos computadores para se comunicar na internet. Funciona através de uma estrutura de servidores que processam consultas DNS e mantêm bancos de dados distribuídos.
+
+Os servidores DNS incluem vários tipos: servidores raiz, servidores de [Top-Level Domain (TLD)](https://en.wikipedia.org/wiki/Top-level_domain), servidores autoritativos e servidores de cache (resolvers). Os servidores raiz são o ponto inicial das consultas DNS, direcionando para os servidores de TLD, que lidam com informações sobre domínios de alto nível, como ".com", ".org" e assim por diante.
+
+> Para uma lista mais completa consulte o site [Top-Level Domains List](https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains).
+
+Quando um cliente (como um navegador) faz uma consulta DNS para traduzir um nome de domínio em um endereço IP, essa consulta é encaminhada através dos servidores DNS hierarquicamente até chegar aos servidores autoritativos do domínio específico. Estes servidores autoritativos mantêm registros atualizados para os nomes de domínio sob sua responsabilidade.
+
+> **Nota:** As consultas são realizadas geralmente utilizando UDP na porta 53.
+
+O processo de resolução DNS envolve várias etapas: a consulta começa no servidor de cache local do cliente, que pode armazenar previamente informações (cache) para evitar consultas repetitivas. Se a informação não estiver em cache, a consulta é enviada através de uma série de servidores DNS, começando pelos servidores raiz, depois para os servidores de TLD e, por fim, para os servidores autoritativos responsáveis pelo domínio em questão.
+
+Uma vez encontrado o servidor autoritativo correto, este fornece a resposta, que é enviada de volta ao cliente, permitindo que ele resolva o nome de domínio em um endereço IP. O DNS é vital para a operação da internet, tornando a navegação mais amigável ao permitir o uso de nomes de domínio em vez de números IP, simplificando o acesso a serviços online. Sua estrutura distribuída e hierárquica contribui para a eficiência e escalabilidade do sistema.
+
+Abaixo podemos ver como o processo ocorre quando o endereço está em cache:
+
+```mermaid
+---
+Processo de consulta de um DNS quando gravado em cache
+---
+
+sequenceDiagram
+
+Cliente ->> Cache: Você tem algum registro para exemplo.com.br?
+Cache ->> Cliente: Retorna o endereço IP correspondente ao domínio gravado em cache
+```
+
+E quando não temos o registro em cache o processo é o seguinte:
+
+```mermaid
+---
+Processo de consulta de um DNS quando não gravado em cache
+---
+
+sequenceDiagram
+
+Cliente ->> DNS Resolver: exemplo.com.br
+DNS Resolver->> DNS root: Você tem algum registro para exemplo.com.br?
+DNS root ->> DNS Resolver: Vá para o servidor de TLD correspondente
+DNS Resolver ->> TLD Server: Você detém o registro.com.br?
+TLD Server ->> DNS Resolver: Vá para o servidor especifico que gerencia esse domínio
+DNS Resolver ->> DNS Server: Qual o endereço IP do domínio exemplo.com.br
+DNS Server ->> DNS Resolver: Retorna o endereço de IP válido
+DNS Resolver ->> Cliente: Endereço X.X.X.X
+```
+> **Nota:** As consultas de DNS podem ser feitas de forma criptografada utilizando [DNS over TLS](https://en.wikipedia.org/wiki/DNS_over_TLS) e [DNS over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS) ou de formas menos comum como [DNS over QUIC](https://datatracker.ietf.org/doc/html/rfc9250) e [DNS over Tor](https://developers.cloudflare.com/1.1.1.1/other-ways-to-use-1.1.1.1/dns-over-tor/).
+
+#### Tipos de registros DNS
+
+#### Comuns
+
+| Registro | Função |
+| --- | --- |
+| A | Mapeia um nome de domínio para um endereço IPv4 |
+| AAAA | Mapeia um nome de domínio para um endereço IPv6 |
+| CNAME | Aponta um nome de domínio para outro nome de domínio |
+| MX | Identifica o servidor de e-mail responsável pelo domínio |
+| TXT | Armazena texto informativo associado a um nome de domínio |
+| NS | Define o servidor de nomes autoritativo para um domínio |
+| SOA | Define parâmetros de configuração para a zona de um domínio |
+| SRV | Especifica serviços disponíveis dentro de um domínio |
+| PTR | Mapeia um endereço IP para um nome de domínio (inverso) |
+
+#### Incomuns
+
+| Registro | Função |
+| --- | --- |
+| AFSDB | Especifica um servidor AFS (Andrew File System) associado a um domínio |
+| CERT | Armazena certificados de segurança associados a um domínio |
+| DNSKEY | Armazena chaves de DNS usadas na autenticação de [DNSSEC (DNS Security Extensions)](https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions) |
+| DS | Mantém hashes de chaves de DNSKEY para autenticação de DNSSEC |
+| HINFO | Armazena informações sobre o tipo de hardware e sistema operacional |
+| KEY | Armazena chaves públicas para criptografia DNS |
+| NAPTR | Utilizado para mapeamento entre nomes de domínio e URIs para serviços de telefonia |
+| RP | Define responsáveis administrativos para um domínio |
+| SSHFP | Armazena fingerprints de chaves SSH associadas a um nome de domínio |
+| TLSA | Armazena informações de autenticação TLS associadas a um domínio |
+
+> Existe mais registros que podem ser consultados em (O que é um registro de DNS?)[https://www.cloudflare.com/pt-br/learning/dns/dns-records/], [DNS Record Types](https://simpledns.plus/help/dns-record-types) ou consultando as RFCs [3597](https://datatracker.ietf.org/doc/html/rfc3597), [4033](https://datatracker.ietf.org/doc/html/rfc4033), [4034](https://datatracker.ietf.org/doc/html/rfc4034) e [4035](https://datatracker.ietf.org/doc/html/rfc4035).
 
 ### HTTP
 
-### SSH
 
-## Segurança
+> O protocolo HTTP pode ser usado sobre uma camada de criptografia utilizando [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) conhecido como [HTTPS](https://en.wikipedia.org/wiki/HTTPS).
 
-### TLS
+## Outros protocolos
+
+Alguns protocolos abaixo tem versões atualizadas que utilizam-se de criptografia TLS em suas chamadas.
+
+### Camada de Aplicação
+
+- [FTP](https://en.wikipedia.org/wiki/File_Transfer_Protocol)
+- [IMAP](https://en.wikipedia.org/wiki/Internet_Message_Access_Protocol)
+- [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat)
+- [LDAP](https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol)
+- [MGCP](https://en.wikipedia.org/wiki/Media_Gateway_Control_Protocol)
+- [MQTT](https://en.wikipedia.org/wiki/MQTT)
+- [NNTP](https://en.wikipedia.org/wiki/Network_News_Transfer_Protocol)
+- [NTP](https://en.wikipedia.org/wiki/Network_Time_Protocol)
+- [OSPF](https://en.wikipedia.org/wiki/Open_Shortest_Path_First)
+- [POP](https://en.wikipedia.org/wiki/Post_Office_Protocol)
+- [PTP](https://en.wikipedia.org/wiki/Precision_Time_Protocol)
+- [ONC/RPC](https://en.wikipedia.org/wiki/Open_Network_Computing_Remote_Procedure_Call)
+- [RTP](https://en.wikipedia.org/wiki/Real-time_Transport_Protocol)
+- [RTSP](https://en.wikipedia.org/wiki/Real_Time_Streaming_Protocol)
+- [SIP](https://en.wikipedia.org/wiki/Session_Initiation_Protocol)
+- [SMTP](https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol)
+- [SNMP](https://en.wikipedia.org/wiki/Simple_Network_Management_Protocol)
+- [SSH](https://en.wikipedia.org/wiki/Secure_Shell)
+- [XMPP](https://en.wikipedia.org/wiki/XMPP)
+
+### Camada de Transporte
+
+- [DCCP](https://en.wikipedia.org/wiki/Datagram_Congestion_Control_Protocol)
+- [SCTP](https://en.wikipedia.org/wiki/Stream_Control_Transmission_Protocol)
+- [RSVP](https://en.wikipedia.org/wiki/Resource_Reservation_Protocol)
+- [QUIC](https://en.wikipedia.org/wiki/QUIC)
+
+
+### Camada de internet e link
+
+- [ARP](https://en.wikipedia.org/wiki/Address_Resolution_Protocol)
+- [Tunneling Protocol](https://en.wikipedia.org/wiki/Tunneling_protocol)
+- [PPP](https://en.wikipedia.org/wiki/Point-to-Point_Protocol)
+- [ICMP](https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol)
+- [NDP](https://en.wikipedia.org/wiki/Neighbor_Discovery_Protocol)
+- [ECN](https://en.wikipedia.org/wiki/Explicit_Congestion_Notification)
+- [IGMP](https://en.wikipedia.org/wiki/Internet_Group_Management_Protocol)
 
 ## Conclusão
 
