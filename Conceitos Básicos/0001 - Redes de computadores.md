@@ -241,7 +241,7 @@ sequenceDiagram
 
 Remetente ->> Destinatário: FIN
 Destinatário ->> Remetente: ACK
-Destinatário ->> Destinatário: FIN
+Destinatário ->> Remetente: FIN
 Remetente ->> Destinatário: ACK
 ```
 
@@ -266,7 +266,7 @@ O [IPv4](https://pt.wikipedia.org/wiki/Protocolo_de_Internet) é um protocolo de
 Um exemplo de cabeçalho TCP/IPv4 está na tabela a seguir:
 
 <style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
+.tg  {border-collapse:collapse;border-spacing:0;align-items: center;}
 .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
   overflow:hidden;padding:10px 5px;word-break:normal;}
 .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
