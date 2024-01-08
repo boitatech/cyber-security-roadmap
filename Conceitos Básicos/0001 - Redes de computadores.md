@@ -198,7 +198,7 @@ O objetivo final do flooding é permitir que os pacotes atinjam o destino ou um 
 
 ### MTU
 
-O (MTU)[https://en.wikipedia.org/wiki/Maximum_transmission_unit], sigla para Maximum Transmission Unit (Unidade Máxima de Transmissão), representa o tamanho máximo de um pacote de dados que pode ser transmitido em uma única vez em uma determinada rede. Em termos mais simples, é a maior quantidade de dados que um protocolo de comunicação pode enviar em uma única transmissão sem ser fragmentado em partes menores.
+O [MTU](https://en.wikipedia.org/wiki/Maximum_transmission_unit), sigla para Maximum Transmission Unit (Unidade Máxima de Transmissão), representa o tamanho máximo de um pacote de dados que pode ser transmitido em uma única vez em uma determinada rede. Em termos mais simples, é a maior quantidade de dados que um protocolo de comunicação pode enviar em uma única transmissão sem ser fragmentado em partes menores.
 
 Esse valor é definido pela tecnologia de rede e pode variar dependendo do tipo de conexão ou protocolo utilizado. Redes Ethernet, por exemplo, frequentemente têm um MTU padrão de 1500 bytes (mínimo de 46 bytes), enquanto outras tecnologias podem ter MTUs diferentes.
 
@@ -210,7 +210,7 @@ Problemas podem surgir se os dispositivos em uma rede tiverem diferentes valores
 
 ### TCP
 
-O (Transmission Control Protocol (TCP))[https://en.wikipedia.org/wiki/Transmission_Control_Protocol] é um protocolo de comunicação orientado à conexão, no nível de transporte do modelo TCP/IP. Antes de iniciar a transmissão de dados, o TCP estabelece uma conexão entre o remetente e o destinatário por meio de um processo de três vias conhecido como "handshake".
+O [Transmission Control Protocol (TCP)](https://en.wikipedia.org/wiki/Transmission_Control_Protocol) é um protocolo de comunicação orientado à conexão, no nível de transporte do modelo TCP/IP. Antes de iniciar a transmissão de dados, o TCP estabelece uma conexão entre o remetente e o destinatário por meio de um processo de três vias conhecido como "handshake".
 
 O handshake TCP inicia com o envio de um segmento SYN (synchronize flag / flag de sincronização) pelo dispositivo remetente para o destinatário. Esse segmento contém um número de sequência inicial e uma solicitação de conexão. O destinatário responde com um segmento SYN-ACK (acknowledgement flag / flag de reconhecimento ), indicando que a conexão foi aceita e pronto para receber dados, junto com seu próprio número de sequência e um ACK (acknowledge) confirmando a recepção do número de sequência inicial.
 
