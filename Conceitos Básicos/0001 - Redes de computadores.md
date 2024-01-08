@@ -511,8 +511,78 @@ DNS Resolver ->> Cliente: Endereço X.X.X.X
 
 ### HTTP
 
+O Hypertext Transfer Protocol (HTTP) é um protocolo da camada de aplicação utilizado para transferir informações, como páginas da web, entre um cliente (geralmente um navegador) e um servidor web. O funcionamento básico do HTTP envolve uma comunicação cliente-servidor que segue um modelo de solicitação e resposta.
+
+> O basicamente o HTTP tem três versões em funcionamento [1.1](https://datatracker.ietf.org/doc/html/rfc2616), [2](https://datatracker.ietf.org/doc/html/rfc7540) e [3](https://datatracker.ietf.org/doc/html/rfc9114).
 
 > O protocolo HTTP pode ser usado sobre uma camada de criptografia utilizando [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) conhecido como [HTTPS](https://en.wikipedia.org/wiki/HTTPS).
+
+#### Estrutura da requisição
+
+Toda requisição é feita da seguinte forma:
+
+```text
+protocolo://subdomínio.domínio.tld/caminho?consulta#fragmento
+```
+
+| Elemento | Descrição |
+|---|---|
+| Protocolo | Especifica o protocolo de comunicação utilizado, como HTTP, HTTPS, FTP, etc |
+| Subdomínio | Opcional, indica uma subdivisão dentro do domínio principal, como "www" em "www.exemplo.com". |
+| Domínio | Identifica o nome de domínio principal, como "exemplo" em "www.exemplo.com" |
+| TLD | Top-Level Domain, ou domínio de nível superior, indica a categoria do domínio, como ".com", ".org", ".net", etc |
+| Caminho | Especifica a localização ou rota do recurso no servidor, como diretórios ou arquivos, após o domínio |
+| Consulta | Contém parâmetros adicionais para a requisição, utilizados em aplicativos web para enviar dados extras para o servido |
+| Fragmento | Identifica uma parte específica do recurso, frequentemente utilizada em páginas web para direcionar para uma seção específica do conteúdo |
+
+#### Métodos
+
+Os métodos HTTP são verbos que indicam a ação a ser realizada em um recurso especificado. Eles definem como uma operação deve ser executada no recurso identificado pelo URI (Uniform Resource Identifier) em uma requisição HTTP.
+
+Aqui está uma tabela com os principais métodos HTTP e suas descrições:
+
+| Método | Descrição |
+|---|---|
+| GET | Solicita a representação de um recurso. Os dados são recuperados sem alterar o servidor ou recurso |
+| POST | Envia dados para serem processados ​​a um recurso específico, geralmente resultando em uma mudança de estado ou a criação de um novo recurso |
+| PUT | Substitui ou atualiza um recurso existente ou cria um recurso se ele não existir no local especificadO |
+| DELETE | Remove o recurso identificado pelo URI especificado |
+| PATCH | Aplica modificações parciais em um recurso. É usado para aplicar alterações específicas sem substituir o recurso completo |
+| HEAD | Similar ao GET, mas solicita apenas os cabeçalhos da resposta, sem os dados do corpo |
+| OPTIONS | Obtém as opções de comunicação disponíveis para o recurso especificado, como os métodos suportados pelo servidor |
+| TRACE | Usado para diagnosticar a rota e os intermediários entre o cliente e o servidor, mostrando a maneira como a requisição é manipulada em cada etapa |
+| CONNECT | Usado para criar um túnel seguro entre o cliente e o servidor, geralmente para estabelecer conexões SSL/TLS por meio de proxies |
+
+#### Cabeçalho
+
+Um cabeçalho HTTP é uma parte fundamental de uma mensagem HTTP que carrega informações adicionais sobre a requisição ou resposta, além dos dados principais transmitidos. Esses cabeçalhos fornecem informações contextuais para que os clientes e servidores possam entender e processar corretamente os dados transmitidos.
+
+A estrutura de um cabeçalho HTTP consiste em linhas de texto ASCII separadas por quebras de linha (normalmente, "\r\n" em HTTP). Cada linha de cabeçalho é composta por um nome seguido de dois pontos ":" e um valor correspondente, conforme o exemplo:
+
+```text
+NomeDoCabeçalho: ValorDoCabeçalho
+```
+
+##### Requisição
+
+| Cabeçalho | Descrição |
+|---|---|
+| [Host](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Host) | Indica o host de destino da requisição. |
+| [User-Agent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) | Identifica o software do cliente (navegador, aplicativo, etc.). |
+| [Accept](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept) | Especifica os tipos de conteúdo aceitos pelo cliente. |
+| [Content-Type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type) | Define o tipo de conteúdo enviado (no caso de POST, PUT, etc.). |
+| [Authorization](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization) | Informa credenciais de autenticação, se necessárias. |
+| [Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cookie) | Envia informações de cookies armazenadas para o servidor. |
+| [Referer](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer) | Indica o endereço de origem da requisição. |
+| (If-Modified-Since)[https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Modified-Since] | Permite que o cliente solicite apenas recursos modificados após uma determinada data. |
+| [Cache-Control](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) | Controla o comportamento de armazenamento em cache. |
+| [Connection](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Connection) | Controla a conexão entre cliente e servidor (ex: "keep-alive" para manter a conexão aberta). |
+
+> Consulte uma lista mais completa de cabeçalhos de requisição e resposta em [Cabeçalhos HTTP](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Headers).
+
+##### Resposta
+
+
 
 ## Outros protocolos
 
