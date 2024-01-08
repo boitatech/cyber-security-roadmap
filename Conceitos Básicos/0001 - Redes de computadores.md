@@ -162,7 +162,7 @@ O endereço MAC é constituído por 12 caracteres alfanuméricos, que podem ser 
 
 > É possível o controle do tamanho do pacote através da alteração do [MTU](https://pt.wikipedia.org/wiki/Unidade_m%C3%A1xima_de_transmiss%C3%A3o).
 
-## Camada de Redes
+## Camada de Redes e Transporte
 
 ### Pacotes
 
@@ -323,13 +323,123 @@ A entrega de pacotes no IPv4 é realizada por meio de roteadores. Esses disposit
 
 No entanto, um desafio significativo enfrentado pelo IPv4 é a escassez de endereços disponíveis. Devido ao esgotamento gradual dos endereços IPv4, estratégias como o uso de NAT (Network Address Translation) tornaram-se comuns para permitir que várias máquinas em redes privadas compartilhem um único endereço IP público, prolongando assim a vida útil do endereçamento IPv4 em face da crescente demanda por conectividade.
 
-## Camada de Transporte
+#### Mascará de rede e classes
+
+A máscara de rede, também conhecida como subnet mask, é um elemento crucial do IPv4 que determina quais bits de um endereço IP pertencem à parte da rede e quais pertencem à parte do host. Ela consiste em uma sequência de bits de 32 bits, onde os bits de rede são representados por 1s contínuos seguidos por 0s para os bits de host. Essa máscara é aplicada aos endereços IP para separar a identificação da rede e do host.
+
+As classes de endereços IPv4 (A, B, C, D e E) determinam a estrutura do endereço e o número de bits alocados para a identificação da rede e do host:
+
+- **Classe A:** As redes de Classe A têm o primeiro bit fixo em 0. O restante dos 7 bits identifica a parte da rede e os 24 bits restantes são usados para endereçar hosts. Isso permite um grande número de redes, mas cada uma com muitos hosts.
+
+- **Classe B:** As redes de Classe B têm os dois primeiros bits fixos em 10. Os 14 bits seguintes são para identificar a rede e os 16 bits finais são para endereçamento de hosts. Isso oferece um equilíbrio entre redes e hosts, sendo usado frequentemente por empresas.
+
+- **Classe C:** As redes de Classe C têm os três primeiros bits fixos em 110. Os 21 bits subsequentes são para identificar a rede e os 8 bits finais são para endereçamento de hosts. Isso oferece um grande número de redes, mas com um número limitado de hosts em cada uma.
+
+- **Classe D:** Reservada para multicast, os quatro primeiros bits são fixos em 1110, sendo os restantes para fins de identificação de grupos de multicast.
+
+- **Classe E:** Reservada para propósitos experimentais, os quatro primeiros bits são fixos em 1111, deixando os restantes para possíveis usos futuros.
+
+Essas classes fornecem estruturas de endereçamento que diferem em termos de número de redes disponíveis e quantidade de hosts permitidos em cada rede. No entanto, devido à escassez de endereços IPv4, estratégias de sub-redes (utilizando máscaras de rede mais curtas) e a adoção do [CIDR (Classless Inter-Domain Routing)](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) foram desenvolvidas para permitir uma alocação mais eficiente de endereços IP.
+
+A tabela completa abaixo mostra todos os códigos CIDR das máscaras de sub-rede:
+
+
+| CIDR | MÁSCARA DE SUB-REDE | MÁSCARA CORINGA | Nº DE ENDEREÇOS IP | ENDEREÇOS IP USÁVEIS |
+|---|---|---|---|---|
+| /32 | 255.255.255.255 | 0.0.0.0 | 1 | 1 |
+| /31 | 255.255.255.254 | 0.0.0.1 | 2 | 2* |
+| /30 | 255.255.255.252 | 0.0.0.3 | 4 | 2 |
+| /29 | 255.255.255.248 | 0.0.0.7 | 8 | 6 |
+| /28 | 255.255.255.240 | 0.0.0.15 | 16	| 14 |
+| /27 | 255.255.255.224 | 0.0.0.31 | 32 | 30 |
+| /26 | 255.255.255.192 | 0.0.0.63 | 64 | 62 |
+| /25 | 255.255.255.128 | 0.0.0.127 | 128 | 126 |
+| /24 | 255.255.255.0 | 0.0.0.255 | 256 | 254 |
+| /23 | 255.255.254.0 | 0.0.1.255 | 512 | 510 |
+| /22 | 255.255.252.0 | 0.0.3.255 | 1,024 | 1,022 |
+| /21 | 255.255.248.0 | 0.0.7.255 | 2,048 | 2,046 |
+| /20 | 255.255.240.0 | 0.0.15.255 | 4,096 | 4,094 |
+| /19 | 255.255.224.0 | 0.0.31.255 | 8,192 | 8,190 |
+| /18 | 255.255.192.0 | 0.0.63.255 | 16,384 | 16,382 |
+| /17 | 255.255.128.0 | 0.0.127.255 | 32,768 | 32,766 |
+| /16 | 255.255.0.0 | 0.0.255.255 | 65,536 | 65,534 |
+| /15 | 255.254.0.0 | 0.1.255.255 | 131,072 | 131,070 |
+| /14 | 255.252.0.0 | 0.3.255.255 | 262,144 | 262,142 |
+| /13 | 255.248.0.0 | 0.7.255.255 | 524,288 | 524,286 |
+| /12 | 255.240.0.0 | 0.15.255.255 | 1,048,576 | 1,048,574 |
+| /11 | 255.224.0.0 | 0.31.255.255 | 2,097,152 | 2,097,150 |
+| /10 | 255.192.0.0 | 0.63.255.255 | 4,194,304 | 4,194,302 |
+| /9 | 255.128.0.0 | 0.127.255.255 | 8,388,608 | 8,388,606 |
+| /8 | 255.0.0.0 | 0.255.255.255 | 16,777,216 | 16,777,214 |
+| /7 | 254.0.0.0 | 1.255.255.255 | 33,554,432 | 33,554,430 |
+| /6 | 252.0.0.0 | 3.255.255.255 | 67,108,864 | 67,108,862 |
+| /5 | 248.0.0.0 | 7.255.255.255 | 134,217,728 | 134,217,726 |
+| /4 | 240.0.0.0 | 15.255.255.255 | 268,435,456 | 268,435,454 |
+| /3 | 224.0.0.0 | 31.255.255.255 | 536,870,912 | 536,870,910 |
+| /2 | 192.0.0.0 | 63.255.255.255 | 1,073,741,824 | 1,073,741,822 |
+| /1 | 128.0.0.0 | 127.255.255.255 | 2,147,483,648 | 2,147,483,646 |
+| /0 | 0.0.0.0 | 255.255.255.255 | 4,294,967,296 | 4,294,967,294 |
+
+> ** /31 é um caso especial detalhado no [RFC 3021](https://datatracker.ietf.org/doc/html/rfc3021) onde as redes com esse tipo de máscara de sub-rede podem atribuir dois endereços IP como link ponto-a-ponto.
+> O primeiro e ultimo endereços são reservados e em uma rede são utilizados geralmente pelo gateway e broadcast respectivamente.
+
+### IPv6
+
+O [IPv6](https://pt.wikipedia.org/wiki/IPv6) é a próxima iteração do protocolo de Internet e representa uma evolução significativa em relação ao IPv4. Ele emprega endereços de 128 bits, substancialmente mais longos do que os 32 bits do IPv4. Esse espaço de endereçamento expandido oferece aproximadamente 340 undecilhões (3.4 x 10^38) de endereços únicos, suprindo a demanda por uma quantidade substancialmente maior de dispositivos conectados à Internet.
+
+O cabeçalho simplificado do IPv6 reduz a complexidade de processamento em roteadores e hosts. Essa simplificação é alcançada eliminando campos redundantes, otimizando o formato do cabeçalho e permitindo extensões de cabeçalho. Isso minimiza a carga de processamento nos dispositivos de rede, resultando em operações mais eficientes.
+
+Um exemplo de cabeçalho IPv6 é:
+
+<table>
+<thead>
+  <tr>
+    <th>Versão</th>
+    <th>Classe de Tráfego</th>
+    <th colspan="3">Identificador de Fluxo</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td colspan="3">Tamanho dos Dados</td>
+    <td>Próximo Cabeçalho</td>
+    <td>Limite de Encaminhamento</td>
+  </tr>
+  <tr>
+    <td colspan="5">Endereço de Origem</td>
+  </tr>
+  <tr>
+    <td colspan="5">Endereço de Destino</td>
+  </tr>
+</tbody>
+</table>
+
+O [SLAAC (Stateless Address Autoconfiguration)](https://datatracker.ietf.org/doc/html/rfc4862) é uma funcionalidade central do IPv6, permitindo que dispositivos gerem automaticamente seus próprios endereços sem depender de um servidor de configuração central, como é comum no IPv4. Isso simplifica a configuração e a administração de dispositivos em redes IPv6.
+
+Em termos de segurança, o IPv6 oferece suporte nativo a [IPSec](https://datatracker.ietf.org/doc/html/rfc6071), integrando segurança ao nível do protocolo. Isso significa que a criptografia, autenticação e integridade dos dados são incorporadas no protocolo, fornecendo comunicação segura por padrão.
+
+A transição do IPv4 para o IPv6 envolve atualizações e configurações em infraestruturas de rede e dispositivos. Métodos de transição, como dual-stack e mecanismos de tunelamento, permitem a coexistência e a interoperabilidade entre ambas as versões do protocolo durante o período de transição, garantindo a continuidade da conectividade em ambientes híbridos IPv4/IPv6.
+
+A ampla implantação do IPv6 é essencial para atender às crescentes demandas por endereçamento de dispositivos e para garantir a escalabilidade e o crescimento contínuo da Internet, além de mitigar os desafios de escassez de endereços IPv4.
 
 ## Aplicação
+
+### DNS
+
+### HTTP
+
+### SSH
+
+## Segurança
+
+### TLS
 
 ## Conclusão
 
 ## Referências
+
+- Autor, A. (Ano). Título do Livro ou Artigo.
+- Tanenbaum, A. S. (2021). Redes de Computadores
 
 ## Conteúdo Adicional
 
