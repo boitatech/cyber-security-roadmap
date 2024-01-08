@@ -507,7 +507,7 @@ DNS Resolver ->> Cliente: Endereço X.X.X.X
 | SSHFP | Armazena fingerprints de chaves SSH associadas a um nome de domínio |
 | TLSA | Armazena informações de autenticação TLS associadas a um domínio |
 
-> Existe mais registros que podem ser consultados em (O que é um registro de DNS?)[https://www.cloudflare.com/pt-br/learning/dns/dns-records/], [DNS Record Types](https://simpledns.plus/help/dns-record-types) ou consultando as RFCs [3597](https://datatracker.ietf.org/doc/html/rfc3597), [4033](https://datatracker.ietf.org/doc/html/rfc4033), [4034](https://datatracker.ietf.org/doc/html/rfc4034) e [4035](https://datatracker.ietf.org/doc/html/rfc4035).
+> Existe mais registros que podem ser consultados em [O que é um registro de DNS?](https://www.cloudflare.com/pt-br/learning/dns/dns-records/), [DNS Record Types](https://simpledns.plus/help/dns-record-types) ou consultando as RFCs [3597](https://datatracker.ietf.org/doc/html/rfc3597), [4033](https://datatracker.ietf.org/doc/html/rfc4033), [4034](https://datatracker.ietf.org/doc/html/rfc4034) e [4035](https://datatracker.ietf.org/doc/html/rfc4035).
 
 ### HTTP
 
