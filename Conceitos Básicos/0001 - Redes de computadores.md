@@ -520,43 +520,49 @@ Alguns protocolos abaixo tem versões atualizadas que utilizam-se de criptografi
 
 ### Camada de Aplicação
 
-- [FTP](https://en.wikipedia.org/wiki/File_Transfer_Protocol)
-- [IMAP](https://en.wikipedia.org/wiki/Internet_Message_Access_Protocol)
-- [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat)
-- [LDAP](https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol)
-- [MGCP](https://en.wikipedia.org/wiki/Media_Gateway_Control_Protocol)
-- [MQTT](https://en.wikipedia.org/wiki/MQTT)
-- [NNTP](https://en.wikipedia.org/wiki/Network_News_Transfer_Protocol)
-- [NTP](https://en.wikipedia.org/wiki/Network_Time_Protocol)
-- [OSPF](https://en.wikipedia.org/wiki/Open_Shortest_Path_First)
-- [POP](https://en.wikipedia.org/wiki/Post_Office_Protocol)
-- [PTP](https://en.wikipedia.org/wiki/Precision_Time_Protocol)
-- [ONC/RPC](https://en.wikipedia.org/wiki/Open_Network_Computing_Remote_Procedure_Call)
-- [RTP](https://en.wikipedia.org/wiki/Real-time_Transport_Protocol)
-- [RTSP](https://en.wikipedia.org/wiki/Real_Time_Streaming_Protocol)
-- [SIP](https://en.wikipedia.org/wiki/Session_Initiation_Protocol)
-- [SMTP](https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol)
-- [SNMP](https://en.wikipedia.org/wiki/Simple_Network_Management_Protocol)
-- [SSH](https://en.wikipedia.org/wiki/Secure_Shell)
-- [XMPP](https://en.wikipedia.org/wiki/XMPP)
+| Protocolo | Descrição |
+| --- | ---|
+| [FTP](https://en.wikipedia.org/wiki/File_Transfer_Protocol) | Protocolo de Transferência de Arquivos - Usado para transferir arquivos pela internet de um computador para outro |
+| [IMAP](https://en.wikipedia.org/wiki/Internet_Message_Access_Protocol) | Protocolo de Acesso a Mensagens da Internet - Usado para acessar e gerenciar e-mails armazenados em um servidor |
+| [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat) | Protocolo de Comunicação na Internet - Utilizado para comunicação em tempo real em salas de chat ou canais |
+| [LDAP](https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol) | Protocolo de Acesso a Diretórios Leves - Usado para acessar e manter informações em serviços de diretório |
+| [MGCP](https://en.wikipedia.org/wiki/Media_Gateway_Control_Protocol) | Protocolo de Controle de Gateway de Mídia - Utilizado para controlar dispositivos de rede em redes VoIP |
+| [MQTT](https://en.wikipedia.org/wiki/MQTT) | Protocolo de Telemetria de Mensagens Confiáveis e Leves - Usado em aplicações IoT para comunicação entre dispositivos |
+| [NNTP](https://en.wikipedia.org/wiki/Network_News_Transfer_Protocol) | Protocolo de Transferência de Notícias em Rede - Utilizado para distribuição e leitura de notícias em grupos de discussão |
+| [NTP](https://en.wikipedia.org/wiki/Network_Time_Protocol) | Protocolo de Tempo de Rede - Usado para sincronização de relógios em computadores em uma rede |
+| [OSPF](https://en.wikipedia.org/wiki/Open_Shortest_Path_First) | Protocolo de Roteamento de Estado de Link - Utilizado para roteamento dinâmico em redes IP |
+| [POP](https://en.wikipedia.org/wiki/Post_Office_Protocol) | Protocolo de Correio de Protocolo - Usado para receber e-mails de um servidor para um cliente de e-mail |
+| [PTP](https://en.wikipedia.org/wiki/Precision_Time_Protocol) | Protocolo de Precisão de Tempo - Utilizado para sincronização de tempo de alta precisão em sistemas de computadores |
+| [ONC/RPC](https://en.wikipedia.org/wiki/Open_Network_Computing_Remote_Procedure_Call) | Open Network Computing Remote Procedure Call - Define como programas em rede se comunicam |
+| [RTP](https://en.wikipedia.org/wiki/Real-time_Transport_Protocol) | Protocolo de Transporte em Tempo Real - Usado para transmissão de áudio e vídeo em tempo real pela internet |
+| [RTSP](https://en.wikipedia.org/wiki/Real_Time_Streaming_Protocol) | Protocolo de Streaming em Tempo Real - Utilizado para controle de streaming de mídia |
+| [SIP](https://en.wikipedia.org/wiki/Session_Initiation_Protocol) | Protocolo de Iniciação de Sessão - Usado para estabelecer e encerrar sessões de comunicação multimídia |
+| [SMTP](https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol) | Protocolo de Transferência de Correio Simples - Utilizado para envio de e-mails entre servidores |
+| [SNMP](https://en.wikipedia.org/wiki/Simple_Network_Management_Protocol) | Protocolo Simples de Gerenciamento de Rede - Usado para gerenciamento e monitoramento de dispositivos de rede |
+| [SSH](https://en.wikipedia.org/wiki/Secure_Shell) | Secure Shell - Protocolo para comunicações seguras e acesso remoto a sistemas |
+| [XMPP](https://en.wikipedia.org/wiki/XMPP) | Protocolo Extensível de Mensagens e Presença na Internet - Usado para mensagens instantâneas e presença online |
 
 ### Camada de Transporte
 
-- [DCCP](https://en.wikipedia.org/wiki/Datagram_Congestion_Control_Protocol)
-- [SCTP](https://en.wikipedia.org/wiki/Stream_Control_Transmission_Protocol)
-- [RSVP](https://en.wikipedia.org/wiki/Resource_Reservation_Protocol)
-- [QUIC](https://en.wikipedia.org/wiki/QUIC)
+| Protocolo | Descrição |
+| --- | ---|
+| [DCCP](https://en.wikipedia.org/wiki/Datagram_Congestion_Control_Protocol) | Protocolo de Controle de Congestionamento de Datagrama - Oferece uma conexão semelhante ao TCP, mas com foco em aplicações multimídia sensíveis à latência e tolerantes à perda de dados. |
+| [SCTP](https://en.wikipedia.org/wiki/Stream_Control_Transmission_Protocol) | Protocolo de Transmissão de Controle de Fluxo em Streams - Oferece transferência de dados confiável em streams separadas, ideal para aplicações que requerem confiabilidade e paralelismo. |
+| [RSVP](https://en.wikipedia.org/wiki/Resource_Reservation_Protocol) | Protocolo de Reserva de Recursos - Utilizado para reservar recursos de rede em tempo real para garantir qualidade de serviço (QoS) para aplicações sensíveis ao tempo. |
+| [QUIC](https://en.wikipedia.org/wiki/QUIC) | Protocolo de Conexões Rápidas pela Internet com UDP - Desenvolvido pelo Google para oferecer conexões seguras e de baixa latência, projetado para melhorar o desempenho de comunicações na web. |
 
 
 ### Camada de internet e link
 
-- [ARP](https://en.wikipedia.org/wiki/Address_Resolution_Protocol)
-- [Tunneling Protocol](https://en.wikipedia.org/wiki/Tunneling_protocol)
-- [PPP](https://en.wikipedia.org/wiki/Point-to-Point_Protocol)
-- [ICMP](https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol)
-- [NDP](https://en.wikipedia.org/wiki/Neighbor_Discovery_Protocol)
-- [ECN](https://en.wikipedia.org/wiki/Explicit_Congestion_Notification)
-- [IGMP](https://en.wikipedia.org/wiki/Internet_Group_Management_Protocol)
+| Protocolo | Descrição |
+| --- | ---|
+| [ARP](https://en.wikipedia.org/wiki/Address_Resolution_Protocol) | Protocolo de Resolução de Endereços - Usado para mapear endereços IP em endereços MAC em redes locais. |
+| [Tunneling Protocol](https://en.wikipedia.org/wiki/Tunneling_protocol) | 	Protocolo de Encapsulamento - Utilizado para encapsular um protocolo dentro de outro para transmissão pela rede. Exemplos incluem L2TP, GRE e IPSec. |
+| [PPP](https://en.wikipedia.org/wiki/Point-to-Point_Protocol) | Protocolo ponto a ponto - Utilizado para estabelecer conexões ponto a ponto sobre linhas seriais ou de comunicação. |
+| [ICMP](https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol) | Protocolo de Mensagens de Controle da Internet - Usado para enviar mensagens de controle e erro na comunicação IP. |
+| [NDP](https://en.wikipedia.org/wiki/Neighbor_Discovery_Protocol) | Protocolo de Descoberta de Vizinhos - Utilizado em redes IPv6 para descobrir outros dispositivos na rede local. |
+| [ECN](https://en.wikipedia.org/wiki/Explicit_Congestion_Notification) | Notificação Explícita de Congestionamento - Usado para notificar roteadores sobre congestionamento na rede. |
+| [IGMP](https://en.wikipedia.org/wiki/Internet_Group_Management_Protocol) | Protocolo de Gerenciamento de Grupos Multicast na Internet - Utilizado por hosts para gerenciar a participação em grupos multicast. |
 
 ## Conclusão
 
