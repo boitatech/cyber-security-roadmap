@@ -386,7 +386,11 @@ A tabela completa abaixo mostra todos os códigos CIDR das máscaras de sub-rede
 
 ### IPv6
 
-O [IPv6](https://pt.wikipedia.org/wiki/IPv6) é a próxima iteração do protocolo de Internet e representa uma evolução significativa em relação ao IPv4. Ele emprega endereços de 128 bits, substancialmente mais longos do que os 32 bits do IPv4. Esse espaço de endereçamento expandido oferece aproximadamente 340 undecilhões (3.4 x 10^38) de endereços únicos, suprindo a demanda por uma quantidade substancialmente maior de dispositivos conectados à Internet.
+O [IPv6](https://pt.wikipedia.org/wiki/IPv6) é a próxima iteração do protocolo de Internet e representa uma evolução significativa em relação ao IPv4. Ele emprega endereços de 128 bits, substancialmente mais longos do que os 32 bits do IPv4. Esse espaço de endereçamento expandido oferece aproximadamente 340 undecilhões ($`3,4 \times 10^{38}`$) de endereços únicos, suprindo a demanda por uma quantidade substancialmente maior de dispositivos conectados à Internet.
+
+Formato do IPv6:
+
+XXXX:XXXX:XXXX:XXXX:XXXX:XXXX:XXXX:XXXX
 
 O cabeçalho simplificado do IPv6 reduz a complexidade de processamento em roteadores e hosts. Essa simplificação é alcançada eliminando campos redundantes, otimizando o formato do cabeçalho e permitindo extensões de cabeçalho. Isso minimiza a carga de processamento nos dispositivos de rede, resultando em operações mais eficientes.
 
@@ -737,8 +741,7 @@ Alguns protocolos abaixo tem versões atualizadas que utilizam-se de criptografi
 | [RSVP](https://en.wikipedia.org/wiki/Resource_Reservation_Protocol) | Protocolo de Reserva de Recursos - Utilizado para reservar recursos de rede em tempo real para garantir qualidade de serviço (QoS) para aplicações sensíveis ao tempo. |
 | [QUIC](https://en.wikipedia.org/wiki/QUIC) | Protocolo de Conexões Rápidas pela Internet com UDP - Desenvolvido pelo Google para oferecer conexões seguras e de baixa latência, projetado para melhorar o desempenho de comunicações na web. |
 
-
-### Camada de internet e link
+### Camada de Internet e Link
 
 | Protocolo | Descrição |
 | --- | ---|
@@ -751,6 +754,9 @@ Alguns protocolos abaixo tem versões atualizadas que utilizam-se de criptografi
 | [IGMP](https://en.wikipedia.org/wiki/Internet_Group_Management_Protocol) | Protocolo de Gerenciamento de Grupos Multicast na Internet - Utilizado por hosts para gerenciar a participação em grupos multicast. |
 
 ## Conclusão
+
+Com isso apresentamos todo conteúdo básico que um profissional de tecnologia deveria saber sobre redes.
+Caso deseje se aprofundar mais no assunto não deixe de consultar as referencias e conteúdos adicionais presentes abaixo. Já que várias coisas não foram abordadas como BGP ou aprofundadas como IPv6.
 
 ## Referências
 
