@@ -184,7 +184,7 @@ O roteamento é o processo fundamental para encaminhar dados entre dispositivos 
 
 Essa determinação do caminho mais eficiente é realizada pelos roteadores, que analisam as informações dos pacotes de dados e utilizam protocolos de roteamento para tomar decisões. Existem diversos protocolos, como [OSPF (Open Shortest Path First)](https://en.wikipedia.org/wiki/Open_Shortest_Path_First), [BGP (Border Gateway Protocol)](https://en.wikipedia.org/wiki/Border_Gateway_Protocol), e [RIP (Routing Information Protocol)](https://en.wikipedia.org/wiki/Routing_Information_Protocol), cada um com suas próprias características e usos específicos.
 
-Os roteadores utilizam algoritmos, como o algoritmo de '[Dijkstra](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm), por exemplo, para calcular o menor caminho entre o dispositivo de origem e o destino. Esse processo leva em consideração várias métricas, como a velocidade da conexão, o número de saltos (roteadores intermediários) e a disponibilidade do caminho.
+Os roteadores utilizam algoritmos, como o algoritmo de [Dijkstra](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm), por exemplo, para calcular o menor caminho entre o dispositivo de origem e o destino. Esse processo leva em consideração várias métricas, como a velocidade da conexão, o número de saltos (roteadores intermediários) e a disponibilidade do caminho.
 
 Assim, os roteadores baseiam suas decisões na análise desses fatores, consultando tabelas de roteamento e protocolos específicos, a fim de direcionar os dados pelo caminho mais eficiente possível. Esse encaminhamento cuidadoso e inteligente é essencial para garantir que os dados sejam entregues com sucesso ao seu destino final na rede de computadores.
 
@@ -381,7 +381,8 @@ A tabela completa abaixo mostra todos os códigos CIDR das máscaras de sub-rede
 | /0 | 0.0.0.0 | 255.255.255.255 | 4,294,967,296 | 4,294,967,294 |
 
 > ** /31 é um caso especial detalhado no [RFC 3021](https://datatracker.ietf.org/doc/html/rfc3021) onde as redes com esse tipo de máscara de sub-rede podem atribuir dois endereços IP como link ponto-a-ponto.
-> O primeiro e ultimo endereços são reservados e em uma rede são utilizados geralmente pelo gateway e broadcast respectivamente.
+
+> O primeiro e ultimo endereços são reservados e são utilizados pelo gateway e broadcast respectivamente.
 
 ### IPv6
 
@@ -396,20 +397,20 @@ Um exemplo de cabeçalho IPv6 é:
   <tr>
     <th>Versão</th>
     <th>Classe de Tráfego</th>
-    <th colspan="3">Identificador de Fluxo</th>
+    <th colspan="2">Identificador de Fluxo</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td colspan="3">Tamanho dos Dados</td>
+    <td colspan="2">Tamanho dos Dados</td>
     <td>Próximo Cabeçalho</td>
     <td>Limite de Encaminhamento</td>
   </tr>
   <tr>
-    <td colspan="5">Endereço de Origem</td>
+    <td colspan="4">Endereço de Origem</td>
   </tr>
   <tr>
-    <td colspan="5">Endereço de Destino</td>
+    <td colspan="4">Endereço de Destino</td>
   </tr>
 </tbody>
 </table>
