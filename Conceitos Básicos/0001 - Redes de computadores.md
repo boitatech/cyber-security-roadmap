@@ -44,7 +44,7 @@ A camada física refere-se ao meio físico usado para transmitir informações, 
 1.  Transmissão Guiada
     -   Elétricos
         -   [Coaxial](https://pt.wikipedia.org/wiki/Cabo_coaxial#:~:text=O%20cabo%20coaxial%20%C3%A9%20um,e%20rodeado%20de%20uma%20blindagem)
-        -   [Par t0rançado](https://pt.wikipedia.org/wiki/Cabo_de_par_tran%C3%A7ado)
+        -   [Par trançado](https://pt.wikipedia.org/wiki/Cabo_de_par_tran%C3%A7ado)
     -   Óticos
         -   [Fibra óptica](https://pt.wikipedia.org/wiki/Fibra_%C3%B3ptica)
 2.  Transmissão Sem Fio
@@ -164,7 +164,184 @@ O endereço MAC é constituído por 12 caracteres alfanuméricos, que podem ser 
 
 ## Camada de Redes
 
+### Pacotes
+
+Um (pacote)[https://en.wikipedia.org/wiki/Network_packet] de rede é uma unidade de informação organizada e estruturada para ser transmitida através de uma rede de computadores. Ele contém dados, metadados e informações de controle necessárias para o envio e a entrega bem-sucedida dos dados de origem ao destino desejado. Essencialmente, o pacote é a unidade fundamental de comunicação em redes.
+
+A estrutura de um pacote de rede segue um formato padronizado. Geralmente, é composto por três partes principais: o cabeçalho (header), o corpo (payload) e o rodapé (trailer). O cabeçalho contém informações cruciais, como endereços de origem e destino, protocolos utilizados, informações de roteamento e outras metainformações necessárias para o encaminhamento correto do pacote pela rede.
+
+| Header | Payload | Trailer |
+
+O corpo do pacote, ou payload, é a parte que carrega os dados reais que estão sendo transmitidos. Pode conter qualquer tipo de informação, desde texto e imagens até comandos de software, dependendo do propósito da transmissão. Por fim, o rodapé (trailer) é responsável pela verificação de erros, incluindo códigos de redundância cíclica (CRC) ou outros mecanismos para garantir que o pacote não tenha sido corrompido durante a transmissão.
+
+Antes de ser enviado, o pacote é segmentado em unidades menores, se necessário, para se adequar aos limites de tamanho estabelecidos pela tecnologia de rede utilizada. Cada segmento é encapsulado com os cabeçalhos e rodapés necessários para garantir que a informação seja transmitida corretamente e possa ser reagrupada e decodificada no destino.
+
+Quando o pacote é enviado, ele atravessa a rede, passando por roteadores e switches, onde os cabeçalhos são examinados para determinar a rota adequada até o destino. No destino final, os pacotes são recebidos, os cabeçalhos são removidos e os dados originais são reconstituídos para serem utilizados pela aplicação ou dispositivo receptor. Essa estruturação cuidadosa e padronizada do pacote é essencial para garantir uma comunicação eficiente e confiável em redes de computadores.
+
+### Roteamento
+
+O roteamento é o processo fundamental para encaminhar dados entre dispositivos em redes de computadores. Quando um dispositivo precisa enviar informações para outro na rede, ele identifica o endereço de destino, normalmente um endereço IP. Em seguida, o dispositivo determina o caminho mais eficiente para que os dados atinjam o destino desejado.
+
+Essa determinação do caminho mais eficiente é realizada pelos roteadores, que analisam as informações dos pacotes de dados e utilizam protocolos de roteamento para tomar decisões. Existem diversos protocolos, como [OSPF (Open Shortest Path First)](https://en.wikipedia.org/wiki/Open_Shortest_Path_First), [BGP (Border Gateway Protocol)](https://en.wikipedia.org/wiki/Border_Gateway_Protocol), e [RIP (Routing Information Protocol)](https://en.wikipedia.org/wiki/Routing_Information_Protocol), cada um com suas próprias características e usos específicos.
+
+Os roteadores utilizam algoritmos, como o algoritmo de '[Dijkstra](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm), por exemplo, para calcular o menor caminho entre o dispositivo de origem e o destino. Esse processo leva em consideração várias métricas, como a velocidade da conexão, o número de saltos (roteadores intermediários) e a disponibilidade do caminho.
+
+Assim, os roteadores baseiam suas decisões na análise desses fatores, consultando tabelas de roteamento e protocolos específicos, a fim de direcionar os dados pelo caminho mais eficiente possível. Esse encaminhamento cuidadoso e inteligente é essencial para garantir que os dados sejam entregues com sucesso ao seu destino final na rede de computadores.
+
+### Inundação
+
+Conhecido como flooding, é um método de roteamento empregado quando não há conhecimento prévio da rota mais eficiente para um destino específico. Esse processo começa quando um roteador recebe um pacote de dados destinado a um local desconhecido. Sem verificar se é a rota correta, o roteador replica esse pacote para todos os seus vizinhos, exceto para aquele de onde o pacote foi recebido. Esse padrão de retransmissão é replicado por cada roteador vizinho que recebe o pacote, criando um espalhamento generalizado dos dados pela rede.
+
+Para evitar loops infinitos e controlar a propagação descontrolada dos pacotes, os roteadores mantêm tabelas de controle, como o [TTL](https://pt.wikipedia.org/wiki/Time_to_Live) (Time To Live), que determina quantos saltos um pacote pode dar antes de ser descartado. Se um pacote alcança o limite de saltos sem chegar ao destino, é descartado para evitar congestionamento excessivo na rede.
+
+O objetivo final do flooding é permitir que os pacotes atinjam o destino ou um roteador que possa encaminhá-los para o destino correto. Uma vez que o pacote chegue a esse ponto, a rota é aprendida e armazenada para ser usada posteriormente, evitando assim a necessidade de continuar o processo de flooding para pacotes futuros destinados a esse mesmo destino. Embora eficaz em disseminar informações em redes onde as rotas são desconhecidas, o flooding pode gerar tráfego excessivo e ineficiência em redes maiores, razão pela qual métodos mais sofisticados são preferidos em ambientes complexos.
+
+### MTU
+
+O (MTU)[https://en.wikipedia.org/wiki/Maximum_transmission_unit], sigla para Maximum Transmission Unit (Unidade Máxima de Transmissão), representa o tamanho máximo de um pacote de dados que pode ser transmitido em uma única vez em uma determinada rede. Em termos mais simples, é a maior quantidade de dados que um protocolo de comunicação pode enviar em uma única transmissão sem ser fragmentado em partes menores.
+
+Esse valor é definido pela tecnologia de rede e pode variar dependendo do tipo de conexão ou protocolo utilizado. Redes Ethernet, por exemplo, frequentemente têm um MTU padrão de 1500 bytes (mínimo de 46 bytes), enquanto outras tecnologias podem ter MTUs diferentes.
+
+É crucial que os dispositivos em uma rede concordem com o mesmo valor de MTU para garantir a comunicação eficiente. Se um pacote for maior que o MTU permitido em uma rede específica, ele será fragmentado em pedaços menores antes da transmissão. No destino, esses fragmentos são reagrupados para reconstituir o pacote original.
+
+Problemas podem surgir se os dispositivos em uma rede tiverem diferentes valores de MTU configurados. Isso pode resultar em fragmentação excessiva, overhead de rede e até mesmo na perda de dados, já que alguns roteadores podem bloquear pacotes muito grandes.
+
+> O tamanho do MTU pode ser maior do que a especificação quando estamos lidando com aplicações especificas como a conexão de um NAS a um servidor. Para entender como esse tipo de comunicação funciona leia o artigo especifico de (Jumbogram)[https://en.wikipedia.org/wiki/Jumbogram] disponível na Wikipedia.
+
+### TCP
+
+O (Transmission Control Protocol (TCP))[https://en.wikipedia.org/wiki/Transmission_Control_Protocol] é um protocolo de comunicação orientado à conexão, no nível de transporte do modelo TCP/IP. Antes de iniciar a transmissão de dados, o TCP estabelece uma conexão entre o remetente e o destinatário por meio de um processo de três vias conhecido como "handshake".
+
+O handshake TCP inicia com o envio de um segmento SYN (synchronize flag / flag de sincronização) pelo dispositivo remetente para o destinatário. Esse segmento contém um número de sequência inicial e uma solicitação de conexão. O destinatário responde com um segmento SYN-ACK (acknowledgement flag / flag de reconhecimento ), indicando que a conexão foi aceita e pronto para receber dados, junto com seu próprio número de sequência e um ACK (acknowledge) confirmando a recepção do número de sequência inicial.
+
+O remetente então responde com um segmento ACK, confirmando a recepção do SYN-ACK e indicando que a conexão foi estabelecida. Com isso, a conexão TCP é iniciada e os dados podem ser transmitidos.
+
+```mermaid
+---
+Processo de aperto de mão (handshake) do TCP
+---
+
+sequenceDiagram
+
+Remetente ->> Destinatário: SYN
+Destinatário ->> Remetente: SYN-ACK
+Remetente->> Destinatário: SYN
+```
+
+Durante a transmissão de dados, o TCP divide os dados em segmentos menores e adiciona informações de cabeçalho a cada segmento, incluindo números de sequência, números de confirmação, janelas de recepção e informações de controle. Os segmentos são enviados ao destinatário, e o TCP utiliza mecanismos de confirmação de recebimento (acknowledgment) e retransmissão para garantir a entrega confiável.
+
+Quando a transmissão é concluída, o processo de encerramento da conexão é iniciado com um handshake de quatro vias. O remetente envia um segmento FIN (finish / finalização) para indicar que não enviará mais dados, e o destinatário responde com um ACK confirmando a recepção do segmento FIN. Em seguida, o destinatário envia um segmento FIN ao remetente, que responde com um ACK. Com isso, a conexão é encerrada de forma ordenada.
+
+```mermaid
+---
+Processo de aperto de mão (handshake) do TCP
+---
+
+sequenceDiagram
+
+Remetente ->> Destinatário: FIN
+Destinatário ->> Remetente: ACK
+Destinatário ->> Destinatário: FIN
+Remetente ->> Destinatário: ACK
+```
+
+O TCP é altamente confiável devido aos seus mecanismos de controle e verificação, incluindo números de sequência, confirmações, retransmissões e timeouts. Esses processos garantem a entrega ordenada e confiável dos dados, mesmo em ambientes de rede propensos a congestionamento ou perda de pacotes.
+
+### UDP
+
+O [User Datagram Protocol (UDP)](https://en.wikipedia.org/wiki/User_Datagram_Protocol) é outro protocolo de transporte no modelo TCP/IP, porém, ao contrário do TCP, o UDP é um protocolo de transmissão não orientado à conexão e não confiável.
+
+No UDP, não há processo de handshake para estabelecer uma conexão entre o remetente e o destinatário, nem há confirmações de recebimento ou retransmissões automáticas de pacotes. Isso significa que não há garantia de entrega ou ordenação dos dados.
+
+Ao contrário do TCP, o UDP não mantém um estado de conexão. Assim, quando um dispositivo deseja enviar dados usando o UDP, ele simplesmente encapsula os dados em datagramas UDP, que consistem em um cabeçalho mínimo (contendo informações de porta de origem, porta de destino e tamanho do datagrama) e o payload, que contém os dados a serem transmitidos.
+
+Os datagramas UDP são enviados ao destinatário sem qualquer confirmação de entrega ou controle de fluxo. Isso resulta em uma transmissão mais rápida, sem a sobrecarga associada aos mecanismos de controle de erro e confirmação do TCP. No entanto, essa abordagem de "disparar e esquecer" pode resultar na perda de pacotes, duplicação de dados ou entrega fora de ordem.
+
+O UDP é frequentemente usado em aplicativos onde a perda ocasional de dados não é crítica, como em transmissões de áudio ou vídeo em tempo real, jogos online e serviços de transmissão de dados que priorizam a velocidade sobre a precisão. A simplicidade do UDP o torna uma escolha popular quando a latência é mais crucial do que a confiabilidade absoluta na entrega dos dados.
+
+### IPv4
+
+O [IPv4](https://pt.wikipedia.org/wiki/Protocolo_de_Internet) é um protocolo de camada de rede no modelo TCP/IP e é composto por um endereçamento de 32 bits. Esses endereços são organizados em quatro octetos (ou 4 conjuntos de 8 bits) e representados na forma decimal pontuada. Isso possibilita a alocação de aproximadamente 4,3 bilhões de endereços únicos.
+
+Um exemplo de cabeçalho TCP/IPv4 está na tabela a seguir:
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-9wq8{border-color:inherit;text-align:center;vertical-align:middle}
+.tg .tg-nrix{text-align:center;vertical-align:middle}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-9wq8">+</th>
+    <th class="tg-9wq8">0-3</th>
+    <th class="tg-9wq8">4-7</th>
+    <th class="tg-9wq8">8-15</th>
+    <th class="tg-9wq8">16-18</th>
+    <th class="tg-9wq8">19-31</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-nrix">0</td>
+    <td class="tg-nrix">Versão</td>
+    <td class="tg-nrix">Tamanho do cabeçalho</td>
+    <td class="tg-nrix">Tipo de Serviço</td>
+    <td class="tg-nrix" colspan="2">Comprimento</td>
+  </tr>
+  <tr>
+    <td class="tg-nrix">32</td>
+    <td class="tg-nrix" colspan="3">Identificador</td>
+    <td class="tg-nrix">Flags</td>
+    <td class="tg-nrix">Offset</td>
+  </tr>
+  <tr>
+    <td class="tg-nrix">64</td>
+    <td class="tg-nrix" colspan="2">Tempo de Vida (TTL)</td>
+    <td class="tg-nrix">Protocolo</td>
+    <td class="tg-nrix" colspan="2">Checksum</td>
+  </tr>
+  <tr>
+    <td class="tg-nrix">96</td>
+    <td class="tg-nrix" colspan="5">Endereço de origem</td>
+  </tr>
+  <tr>
+    <td class="tg-nrix">128</td>
+    <td class="tg-nrix" colspan="5">Endereço de destino</td>
+  </tr>
+  <tr>
+    <td class="tg-nrix">160</td>
+    <td class="tg-nrix" colspan="5">Opções</td>
+  </tr>
+  <tr>
+    <td class="tg-nrix">192</td>
+    <td class="tg-nrix" colspan="5">Dados</td>
+  </tr>
+</tbody>
+</table>
+
+O IPv4 utiliza classes de endereços para determinar o tamanho da rede e o número de hosts em cada rede. As classes A, B e C são as principais classes usadas para endereços de hosts, variando no número de bits reservados para a identificação da rede e do host. As classes D e E são reservadas para multicast e propósitos experimentais, respectivamente.
+
+A comunicação no IPv4 é baseada em datagramas. Cada datagrama contém informações de cabeçalho e dados. O cabeçalho inclui informações essenciais, como endereços de origem e destino, identificadores de pacotes, além de informações de controle e verificação de integridade.
+
+A entrega de pacotes no IPv4 é realizada por meio de roteadores. Esses dispositivos utilizam tabelas de roteamento para determinar o caminho mais eficiente para encaminhar os pacotes através da rede. Essas tabelas são atualizadas e mantidas com base em informações de roteamento, como atualizações de protocolos de roteamento ou configurações manuais.
+
+No entanto, um desafio significativo enfrentado pelo IPv4 é a escassez de endereços disponíveis. Devido ao esgotamento gradual dos endereços IPv4, estratégias como o uso de NAT (Network Address Translation) tornaram-se comuns para permitir que várias máquinas em redes privadas compartilhem um único endereço IP público, prolongando assim a vida útil do endereçamento IPv4 em face da crescente demanda por conectividade.
+
 ## Camada de Transporte
 
 ## Aplicação
 
+## Conclusão
+
+## Referências
+
+## Conteúdo Adicional
+
+### Artigos
+
+- [IP-TCP-HTTP](https://github.com/objcio/articles/blob/master/2014-03-07-ip-tcp-http.markdown)
