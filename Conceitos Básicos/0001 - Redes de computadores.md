@@ -265,61 +265,52 @@ O [IPv4](https://pt.wikipedia.org/wiki/Protocolo_de_Internet) é um protocolo de
 
 Um exemplo de cabeçalho TCP/IPv4 está na tabela a seguir:
 
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;align-items: center;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-9wq8{border-color:inherit;text-align:center;vertical-align:middle}
-.tg .tg-nrix{text-align:center;vertical-align:middle}
-</style>
-<table class="tg">
+<table>
 <thead>
   <tr>
-    <th class="tg-9wq8">+</th>
-    <th class="tg-9wq8">0-3</th>
-    <th class="tg-9wq8">4-7</th>
-    <th class="tg-9wq8">8-15</th>
-    <th class="tg-9wq8">16-18</th>
-    <th class="tg-9wq8">19-31</th>
+    <th>+</th>
+    <th>0-3</th>
+    <th>4-7</th>
+    <th>8-15</th>
+    <th>16-18</th>
+    <th>19-31</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td class="tg-nrix">0</td>
-    <td class="tg-nrix">Versão</td>
-    <td class="tg-nrix">Tamanho do cabeçalho</td>
-    <td class="tg-nrix">Tipo de Serviço</td>
-    <td class="tg-nrix" colspan="2">Comprimento</td>
+    <td">0</td>
+    <td">Versão</td>
+    <td">Tamanho do cabeçalho</td>
+    <td">Tipo de Serviço</td>
+    <td" colspan="2">Comprimento</td>
   </tr>
   <tr>
-    <td class="tg-nrix">32</td>
-    <td class="tg-nrix" colspan="3">Identificador</td>
-    <td class="tg-nrix">Flags</td>
-    <td class="tg-nrix">Offset</td>
+    <td">32</td>
+    <td" colspan="3">Identificador</td>
+    <td">Flags</td>
+    <td">Offset</td>
   </tr>
   <tr>
-    <td class="tg-nrix">64</td>
-    <td class="tg-nrix" colspan="2">Tempo de Vida (TTL)</td>
-    <td class="tg-nrix">Protocolo</td>
-    <td class="tg-nrix" colspan="2">Checksum</td>
+    <td">64</td>
+    <td" colspan="2">Tempo de Vida (TTL)</td>
+    <td">Protocolo</td>
+    <td" colspan="2">Checksum</td>
   </tr>
   <tr>
-    <td class="tg-nrix">96</td>
-    <td class="tg-nrix" colspan="5">Endereço de origem</td>
+    <td">96</td>
+    <td" colspan="5">Endereço de origem</td>
   </tr>
   <tr>
-    <td class="tg-nrix">128</td>
-    <td class="tg-nrix" colspan="5">Endereço de destino</td>
+    <td">128</td>
+    <td" colspan="5">Endereço de destino</td>
   </tr>
   <tr>
-    <td class="tg-nrix">160</td>
-    <td class="tg-nrix" colspan="5">Opções</td>
+    <td">160</td>
+    <td" colspan="5">Opções</td>
   </tr>
   <tr>
-    <td class="tg-nrix">192</td>
-    <td class="tg-nrix" colspan="5">Dados</td>
+    <td">192</td>
+    <td" colspan="5">Dados</td>
   </tr>
 </tbody>
 </table>
