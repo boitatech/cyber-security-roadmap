@@ -563,7 +563,7 @@ A estrutura de um cabeçalho HTTP consiste em linhas de texto ASCII separadas po
 NomeDoCabeçalho: ValorDoCabeçalho
 ```
 
-##### Requisição
+##### Requisição e resposta
 
 | Cabeçalho | Descrição |
 |---|---|
@@ -574,15 +574,131 @@ NomeDoCabeçalho: ValorDoCabeçalho
 | [Authorization](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization) | Informa credenciais de autenticação, se necessárias. |
 | [Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cookie) | Envia informações de cookies armazenadas para o servidor. |
 | [Referer](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer) | Indica o endereço de origem da requisição. |
-| (If-Modified-Since)[https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Modified-Since] | Permite que o cliente solicite apenas recursos modificados após uma determinada data. |
+| [If-Modified-Since](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Modified-Since) | Permite que o cliente solicite apenas recursos modificados após uma determinada data. |
 | [Cache-Control](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) | Controla o comportamento de armazenamento em cache. |
 | [Connection](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Connection) | Controla a conexão entre cliente e servidor (ex: "keep-alive" para manter a conexão aberta). |
+| [Content-Length](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Headers/Content-Length) | Informa o tamanho do corpo da mensagem em bytes. |
+| [Set-Cookie](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Headers/Set-Cookie) | Define um novo cookie que o servidor deseja armazenar no cliente. |
+| [Cache-Control](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Headers/Cache-Control) | Controla o comportamento de armazenamento em cache no lado do cliente ou intermediário. |
+| [Expires](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Headers/Expires) | Indica a data e hora em que a resposta deve ser considerada como expirada. |
+| [Server](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Headers/Server) | Indica informações sobre o servidor web que gerou a resposta. |
+| [Last-Modified](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Headers/Last-Modified) | Indica a data e hora da última modificação no recurso. |
+| [ETag](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Headers/ETag) | Fornece uma etiqueta de entidade, que pode ser utilizada para determinar se o recurso foi alterado. |
 
 > Consulte uma lista mais completa de cabeçalhos de requisição e resposta em [Cabeçalhos HTTP](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Headers).
 
-##### Resposta
+#### Formato da requisição
 
+A requisição como especificado em [Mensagens HTTP](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Messages) tem a seguinte estrutura:
 
+```text
+Método /caminho HTTP/versão
+Cabeçalho: valor
+Cabeçalho: valor
+
+Corpo da requisição
+```
+
+#### Status
+
+ Os códigos de status de resposta HTTP indicam se uma solicitação HTTP específica foi concluída com êxito. As respostas são agrupadas em cinco classes:
+
+- Respostas Informativas (100 – 199)
+- Respostas bem-sucedidas (200 – 299)
+- Mensagens de redirecionamento (300 – 399)
+- Respostas de erro do cliente (400 – 499)
+- Respostas de erro do servidor (500 – 599)
+
+Caso deseje a tabela completa entre em na documentação de [status](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status).
+
+##### Informativos
+
+| Código de Status | Descrição |
+|---|---|
+| 100 | **Continue** - Indica que o servidor recebeu os cabeçalhos da requisição e o cliente pode continuar com o corpo da requisição. |
+| 101 | **Switching Protocols** - Indica que o servidor está disposto a mudar o protocolo em uso. |
+| 102 | **Processing** - Indica que o servidor recebeu e está processando a requisição, mas ainda não concluiu a operação. |
+| 103 | **Early Hints** - Indica que o servidor está enviando respostas preliminares antes de enviar a resposta final. |
+| 104 | **Unavailable For Legal Reasons** - Indica que o recurso solicitado está indisponível por razões legais. |
+| 105 | **Name Not Resolved** - Usado em sistemas de redes para indicar que o nome não pôde ser resolvido para um endereço. |
+| 106 | **Variant Also Negotiates** - Indica que o servidor selecionou um dos múltiplos recursos a ser entregue ao cliente. |
+| 107 | **Loop Detected** - Indica que uma referência circular foi detectada em operações encadeadas. |
+| 108 | **Not Extended** - Usado para indicar que a extensão solicitada pelo cliente não é suportada pelo servidor. |
+| 109 | **Network Authentication Required** - Indica que a autenticação de rede é necessária para acessar o recurso. |
+| 110 | **Storage Overloaded** - Indica que o servidor de armazenamento está sobrecarregado. |
+| 111 | **Recovery On Timer Expired** - Indica que o servidor está em processo de recuperação e o tempo limite expirou. |
+| 112 | **Restart Marker Expected** - Indica que o cliente deve enviar um sinal de reinício antes de enviar dados novamente. |
+| 113 | **Certificate Required** - Indica que o cliente deve fornecer um certificado para acessar o recurso. |
+| 114 | **No Certificates Present** - Indica que nenhum certificado foi fornecido pelo cliente. |
+
+##### Bem sucedido
+
+| Código de Status | Descrição |
+|---|---|
+| 200 | **OK** - Indica que a requisição foi bem-sucedida. |
+| 201 | **Created** - Indica que a requisição resultou na criação de um novo recurso. |
+| 202 | **Accepted** - Indica que a requisição foi aceita para processamento, mas ainda não foi concluída. |
+| 203 | **Non-Authoritative Information** - Indica que a resposta é proveniente de um servidor diferente do originalmente especificado. |
+| 204 | **No Content** - Indica que a requisição foi bem-sucedida, mas não há conteúdo para ser retornado. |
+| 205 | **Reset Content** - Indica que o cliente deve redefinir a visualização do documento. |
+| 206 | **Partial Content** - Indica que a resposta é apenas uma parte solicitada de um recurso maior. |
+| 207 | **Multi-Status** - Indica que a resposta pode conter informações múltiplas para diferentes partes do recurso. |
+| 208 | **Already Reported** - Indica que partes do corpo da requisição foram processadas. |
+| 226 | **IM Used** - Indica que a requisição foi bem-sucedida e o servidor retornou metainformações do recurso. |
+| 227 | **Instance Manipulation Used** - Indica que o servidor alterou o comportamento de uma instância do recurso. |
+| 228 | **Resume Incomplete** - Indica que a requisição para retomar uma requisição anterior foi aceita, mas a transferência ainda não está completa. |
+| 229 | **Authentication And Security Information Rejected** - Indica que a requisição foi rejeitada devido a problemas de autenticação ou segurança. |
+| 230 | **Extended Information** - Indica que a resposta contém informações adicionais estendidas. |
+| 231 | **More Information Available** - Indica que o servidor tem mais informações para a requisição. |
+
+##### Redirecionamento
+
+| Código de Status | Descrição |
+|---|---|
+| 300 | **Multiple Choices** - Indica que a requisição tem várias opções de respostas e o cliente deve escolher uma. |
+| 301 | **Moved Permanently** - Indica que o recurso solicitado foi permanentemente movido para um novo local. |
+| 302 | **Found** - Indica que o recurso solicitado foi temporariamente movido para um novo local. |
+| 303 | **See Other** - Indica que a resposta para a requisição pode ser encontrada em um novo URI. |
+| 304 | **Not Modified** - Indica que o recurso não foi modificado desde a última requisição. |
+| 305 | **Use Proxy** - Indica que o cliente deve acessar o recurso por meio de um proxy especificado. |
+| 307 | **Temporary Redirect** - Indica que o recurso solicitado foi temporariamente movido para um novo URI, mantendo o método original. |
+| 308 | **Permanent Redirect** - Indica que o recurso solicitado foi permanentemente movido para um novo URI, mantendo o método original. |
+
+##### Erros de cliente
+
+| Código de Status | Descrição |
+|---|---|
+| 400 | **Bad Request** - Indica que a requisição do cliente foi inválida, malformada ou não pôde ser entendida pelo servidor. |
+| 401 | **Unauthorized** - Indica que a autenticação é necessária para acessar o recurso, e as credenciais fornecidas foram rejeitadas ou não foram fornecidas. |
+| 402 | **Payment Required** - Indica que o acesso ao recurso requer um pagamento. Não é amplamente utilizado. |
+| 403 | **Forbidden** - Indica que o cliente não tem permissão para acessar o recurso solicitado, mesmo após autenticação. |
+| 404 | **Not Found** - Indica que o recurso solicitado não foi encontrado no servidor. |
+| 405 | **Method Not Allowed** - Indica que o método de requisição utilizado não é suportado para o recurso solicitado. |
+| 406 | **Not Acceptable** - Indica que o servidor não pode gerar um conteúdo que satisfaça os critérios do cabeçalho "Accept" da requisição. |
+| 407 | **Proxy Authentication Required** - Indica que autenticação é necessária para o acesso através de um proxy. |
+| 408 | **Request Timeout** - Indica que o servidor encerrou a conexão devido a tempo de espera para a requisição. |
+| 409 | **Conflict** - Indica que a requisição não pôde ser completada devido a um conflito com o estado atual do recurso. |
+| 410 | **Gone** - Indica que o recurso solicitado não está mais disponível no servidor e não há redirecionamento permanente. |
+| 411 | **Length Required** - Indica que o servidor espera um cabeçalho "Content-Length" na requisição, mas não foi fornecido. |
+| 412 | **Precondition Failed** - Indica que uma condição prévia na requisição foi avaliada como falsa pelo servidor. |
+| 413 | **Payload Too Large** - Indica que a requisição foi rejeitada devido ao tamanho do payload ser maior do que o permitido. |
+| 414 | **URI Too Long** - Indica que o URI da requisição é muito longo para ser processado pelo servidor. |
+
+##### Erros de servidor
+
+| Código de Status | Descrição |
+|---|---|
+| 500 | **Internal Server Error** - Indica um erro genérico no servidor, indicando que algo deu errado e não foi possível processar a requisição do cliente. |
+| 501 | **Not Implemented** - Indica que o servidor não suporta a funcionalidade necessária para completar a requisição do cliente. |
+| 502 | **Bad Gateway** - Indica que o servidor atuou como gateway ou proxy e recebeu uma resposta inválida do servidor upstream. |
+| 503 | **Service Unavailable** - Indica que o servidor não está disponível no momento devido a sobrecarga ou manutenção temporária. |
+| 504 | **Gateway Timeout** - Indica que o servidor atuou como gateway ou proxy e não recebeu uma resposta oportuna do servidor upstream. |
+| 505 | **HTTP Version Not Supported** - Indica que a versão do protocolo HTTP utilizado na requisição não é suportada pelo servidor. |
+| 506 | **Variant Also Negotiates** - Indica que o servidor selecionou um dos múltiplos recursos a ser entregue ao cliente. |
+| 507 | **Insufficient Storage** - Indica que o servidor não pode criar ou modificar o recurso devido à falta de espaço de armazenamento. |
+| 508 | **Loop Detected** - Indica que uma referência circular foi detectada em operações encadeadas. |
+| 510 | **Not Extended** - Indica que uma extensão solicitada pelo cliente não é suportada pelo servidor. |
+| 511 | **Network Authentication Required** - Indica que autenticação de rede é necessária para acessar o recurso. |
 
 ## Outros protocolos
 
@@ -638,10 +754,35 @@ Alguns protocolos abaixo tem versões atualizadas que utilizam-se de criptografi
 
 ## Referências
 
-- Autor, A. (Ano). Título do Livro ou Artigo.
 - Tanenbaum, A. S. (2021). Redes de Computadores
+- Moraes, A. F. (2014). Redes de Computadores
+- Marin, P. S. (2014). Cabeamento Estruturado
 
 ## Conteúdo Adicional
+
+### Vídeos
+
+- [Introdução a Redes de Computadores](https://www.youtube.com/playlist?list=PLdsnXVqbHDUcTGjNZuRYCVj3AZtdt6oG7)
+- [Curso de Cisco Packet Tracer](https://www.youtube.com/playlist?list=PLAp37wMSBouDeR3lBP2SsEe6GC5YW2UIg)
+- [Curso Redes de Computadores](https://www.youtube.com/playlist?list=PLHz_AreHm4dkd4lr9G0Up-W-YaHYdTDuP)
+
+### RFC
+
+- [826](https://datatracker.ietf.org/doc/html/rfc826)
+- [2131](https://datatracker.ietf.org/doc/html/rfc2131)
+- [1034](https://datatracker.ietf.org/doc/html/rfc1034)
+- [1035](https://datatracker.ietf.org/doc/html/rfc1035)
+- [959](https://datatracker.ietf.org/doc/html/rfc959)
+- [1945](https://datatracker.ietf.org/doc/html/rfc1945)
+- [792](https://datatracker.ietf.org/doc/html/rfc792)
+- [791](https://datatracker.ietf.org/doc/html/rfc791)
+- [2460](https://datatracker.ietf.org/doc/html/rfc2460)
+- [3022](https://datatracker.ietf.org/doc/html/rfc3022)
+- [1939](https://datatracker.ietf.org/doc/html/rfc1939)
+- [5321](https://datatracker.ietf.org/doc/html/rfc5321)
+- [4251](https://datatracker.ietf.org/doc/html/rfc4251)
+- [793](https://datatracker.ietf.org/doc/html/rfc793)
+- [768](https://datatracker.ietf.org/doc/html/rfc768)
 
 ### Artigos
 
