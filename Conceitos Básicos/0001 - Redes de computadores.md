@@ -166,7 +166,7 @@ O endereço MAC é constituído por 12 caracteres alfanuméricos, que podem ser 
 
 ### Pacotes
 
-Um (pacote)[https://en.wikipedia.org/wiki/Network_packet] de rede é uma unidade de informação organizada e estruturada para ser transmitida através de uma rede de computadores. Ele contém dados, metadados e informações de controle necessárias para o envio e a entrega bem-sucedida dos dados de origem ao destino desejado. Essencialmente, o pacote é a unidade fundamental de comunicação em redes.
+Um [pacote](https://en.wikipedia.org/wiki/Network_packet) de rede é uma unidade de informação organizada e estruturada para ser transmitida através de uma rede de computadores. Ele contém dados, metadados e informações de controle necessárias para o envio e a entrega bem-sucedida dos dados de origem ao destino desejado. Essencialmente, o pacote é a unidade fundamental de comunicação em redes.
 
 A estrutura de um pacote de rede segue um formato padronizado. Geralmente, é composto por três partes principais: o cabeçalho (header), o corpo (payload) e o rodapé (trailer). O cabeçalho contém informações cruciais, como endereços de origem e destino, protocolos utilizados, informações de roteamento e outras metainformações necessárias para o encaminhamento correto do pacote pela rede.
 
