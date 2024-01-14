@@ -761,26 +761,32 @@ Alguns protocolos abaixo tem versões atualizadas que utilizam-se de criptografi
 | [ECN](https://en.wikipedia.org/wiki/Explicit_Congestion_Notification) | Notificação Explícita de Congestionamento - Usado para notificar roteadores sobre congestionamento na rede. |
 | [IGMP](https://en.wikipedia.org/wiki/Internet_Group_Management_Protocol) | Protocolo de Gerenciamento de Grupos Multicast na Internet - Utilizado por hosts para gerenciar a participação em grupos multicast. |
 
-## Conclusão
+# Conclusão
 
 Com isso apresentamos todo conteúdo básico que um profissional de tecnologia deveria saber sobre redes.
 Caso deseje se aprofundar mais no assunto não deixe de consultar as referencias e conteúdos adicionais presentes abaixo. Já que várias coisas não foram abordadas como BGP ou aprofundadas como IPv6.
 
-## Referências
+# Anexo 1 - Portas de comunicação
+
+São usadas para identificar processos que estão se comunicando através de uma rede. Cada processo que se comunica através de uma rede é atribuído um número de porta exclusivo. As portas de comunicação são divididas em três categorias: bem conhecidas, registradas e dinâmicas. As portas bem conhecidas são aquelas com números de porta entre 0 e 1023 e são reservadas para serviços comuns, como HTTP, FTP e SSH. As portas registradas são aquelas com números de porta entre 1024 e 49151 e são usadas por aplicativos e serviços registrados. As portas dinâmicas são aquelas com números de porta entre 49152 e 65535 e são usadas por aplicativos e serviços temporários.
+
+Para uma lista mais completas das portas utilizadas por serviços consulte o link [Lista de números de portas TCP e UDP (EN)](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers).
+
+# Referências
 
 - Tanenbaum, A. S. (2021). Redes de Computadores
 - Moraes, A. F. (2014). Redes de Computadores
 - Marin, P. S. (2014). Cabeamento Estruturado
 
-## Conteúdo Adicional
+# Conteúdo Adicional
 
-### Vídeos
+## Vídeos
 
 - [Introdução a Redes de Computadores](https://www.youtube.com/playlist?list=PLdsnXVqbHDUcTGjNZuRYCVj3AZtdt6oG7)
 - [Curso de Cisco Packet Tracer](https://www.youtube.com/playlist?list=PLAp37wMSBouDeR3lBP2SsEe6GC5YW2UIg)
 - [Curso Redes de Computadores](https://www.youtube.com/playlist?list=PLHz_AreHm4dkd4lr9G0Up-W-YaHYdTDuP)
 
-### RFC
+## RFC
 
 - [826](https://datatracker.ietf.org/doc/html/rfc826)
 - [2131](https://datatracker.ietf.org/doc/html/rfc2131)
@@ -798,6 +804,6 @@ Caso deseje se aprofundar mais no assunto não deixe de consultar as referencias
 - [793](https://datatracker.ietf.org/doc/html/rfc793)
 - [768](https://datatracker.ietf.org/doc/html/rfc768)
 
-### Artigos
+## Artigos
 
 - [IP-TCP-HTTP](https://github.com/objcio/articles/blob/master/2014-03-07-ip-tcp-http.markdown)
